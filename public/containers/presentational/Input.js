@@ -19,5 +19,3 @@ export default (field) => {
             />
         );
 };
-
-//{...field.prefillValue ? {value: field.prefillValue} : {}}

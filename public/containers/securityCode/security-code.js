@@ -37,40 +37,56 @@ class SecurityCode extends Component {
             </div>
             );
 
-        const renderCode = (retrievedCode) => {
-            if(retrievedCode.code)
-            if(retrievedCode.code.Error) {
+        const renderCode = (retrievedCode, isLoading) => {
+
+            if(isLoading) {
                 return (
-                    <div className="form-group text-center text-danger pull-right col-sm-2">
-                        <p className="security-code-danger"><i className="fa fa-exclamation-triangle security-code-danger">  </i> </p>
-                        <p className="security-code-not-found">Not Found</p>
+                    <div className="form-group text-center text-info security-code-error-text pull-right col-sm-2">
+                        <span className="loading">
+                            <i className="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"> </i>
+                            <p className="sr-only">Loading...</p>
+                        </span>
+                    </div>
+                );
+            }
+
+            if(retrievedCode.code) {
+                return retrievedCode.code.Error ? (
+                    <div className="form-group text-center text-danger security-code-error-text pull-right col-sm-2">
+                            <p className="security-code-danger"><i
+                                className="fa fa-exclamation-triangle security-code-danger"> </i></p>
+                            <p className="security-code-not-found">Not Found</p>
+                    </div>
+                ) : (
+                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
+                        <label>{retrievedCode.code.SecurityCode || ''}</label>
+                    </div>
+                );
+            } else {
+                return (
+                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
                     </div>
                 )
-            } else {
-               return (
-                   <div className="form-group security-code-retrieved pull-right col-sm-2">
-                       <label>{retrievedCode.code.SecurityCode}</label>
-                   </div>
-               );
             }
         };
 
 
-        const renderStageField = () => (<Field
+        const renderStageField = () => (
+            <Field
                 name="stage"
                 placeholder="CCP"
                 type="text"
                 hintText="claimscollectionserv stage2xx"
                 component={Input}
-                defaultValue="stage2hx15305"/>
+                />
             );
 
-        const renderAccountField = () => (<Field
-                    name="accountNumber"
-                    placeholder="Account Number or Email"
-                    type="text"
-                    component={Input}
-                    defaultValue="auth-auto-20025970105847044@paypal.com"
+        const renderAccountField = () => (
+            <Field
+                name="accountNumber"
+                placeholder="Account Number or Email"
+                type="tel"
+                component={Input}
             />
             );
 
@@ -98,7 +114,7 @@ class SecurityCode extends Component {
                             {renderButton()}
                         </div>
 
-                        {renderCode(this.props.securityCodeFetched)}
+                        {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
 
                     </form>
                 </div>
@@ -115,18 +131,19 @@ function mapStateToProps(state) {
     return {
         securityCodeChallenge: state.securityCodeChallenge,
         securityCodeFetched: state.securityCodeFetched,
-        user: state.user
+        user: state.user,
+        isLoading: state.isLoading
     }
 }
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ fetchSecurityCode }, dispatch);
+}
+
 
 SecurityCode = reduxForm({
     form: 'securityCodeForm',
     validate
 }, () => {})(SecurityCode);
-
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchSecurityCode }, dispatch);
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecurityCode)

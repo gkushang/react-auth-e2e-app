@@ -32,16 +32,21 @@ export function selectSecurityCodeChallenge(securityCodeChallenge) {
 
 export function fetchSecurityCode(challenge, params) {
     console.log('Fetch Security Code:  ', challenge, params);
+
     return (dispatch) => {
+
+        dispatch({
+            type: Types.SECURITY_CODE_REQUEST_TO_FETCH,
+            isLoading: true
+        });
+
         securityCode({
             challenge,
             params
         }).then(function(code) {
-            code = code.data;
-            console.log('Fetch Security Code. CODE IS ', code);
             dispatch({
-                type: Types.SECURITY_CODE_CHALLENGE_FETCH,
-                code
+                type: Types.SECURITY_CODE_RECEIVED,
+                code: code.data
             })
         })
 
