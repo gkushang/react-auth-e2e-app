@@ -5,11 +5,7 @@ class UserInformation extends Component {
 
     render() {
 
-        console.log('props == ', this.props);
-
         const info = this.props.user;
-
-        console.log('userInfo == ', info);
 
         if (!info) {
             return (

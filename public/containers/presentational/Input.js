@@ -16,6 +16,7 @@ export default (field) => {
                     "fontSize": "10px"
                 }}
                 {...field.input}
+                value={field.defaultValue}
             />
         );
 };

@@ -51,8 +51,14 @@ export default function() {
             }
         ],
         securityCodes: [
-            {type: 'Sms'},
-            {type: 'Email'}
+            {
+                type: 'Sms',
+                key: 'sms'
+            },
+            {
+                type: 'Email',
+                key: 'email'
+            },
         ]
     }
 }

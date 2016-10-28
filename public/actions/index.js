@@ -1,6 +1,6 @@
-import Constants from '../helpers/contants';
+import Types from './types';
 import popUser from '../../service/popUser';
-import faker from 'faker';
+import securityCode from '../../service/securityCode';
 
 export function selectChallenge(challenge) {
     return (dispatch) => {
@@ -12,7 +12,7 @@ export function selectChallenge(challenge) {
 
         const dispatchAction = (user) => {
             dispatch({
-                type: Constants.CHALLENGE_SELECTED,
+                type: Types.CHALLENGE_SELECTED,
                 user
             })
         };
@@ -25,22 +25,24 @@ export function selectChallenge(challenge) {
 
 export function selectSecurityCodeChallenge(securityCodeChallenge) {
     return {
-        type: Constants.SECURITY_CODE_CHALLENGE_SELECTED,
+        type: Types.SECURITY_CODE_CHALLENGE_SELECTED,
         payload: securityCodeChallenge
     }
 }
 
-export function fetchSecurityCode(securityCodeChallenge, params) {
+export function fetchSecurityCode(challenge, params) {
 
-    //fetch code for securityCodeChallenge.type & account stage from params;
+    return (dispatch) => {
+        securityCode({
+            challenge,
+            params
+        }).then(function(code) {
+            console.log('Fetch Security Code. CODE IS ', code);
+            dispatch({
+                type: Types.SECURITY_CODE_CHALLENGE_FETCH,
+                code
+            })
+        })
 
-    var code = {
-        code: faker.random.number(9999),
-        error: faker.random.number(9999)
-    };
-
-    return {
-        type: Constants.SECURITY_CODE_CHALLENGE_FETCH,
-        payload: code
     }
 }

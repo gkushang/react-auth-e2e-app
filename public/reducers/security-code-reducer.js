@@ -1,6 +1,9 @@
-import Constants from '../helpers/contants';
+import Constants from '../actions/types';
 
-export default function(state = {type: 'Sms'}, action) {
+export default function(state = {
+    type: 'Sms',
+    key: 'sms'}, action) {
+
   switch (action.type) {
 
         case Constants.SECURITY_CODE_CHALLENGE_SELECTED :

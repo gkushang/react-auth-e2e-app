@@ -25,5 +25,8 @@ module.exports = {
     port:8888,
     headers: { "Access-Control-Allow-Origin": "*" },
     changeOrigin: true
+  },
+  externals: {
+    'Config': JSON.stringify(require('./config/config.json'))
   }
 };

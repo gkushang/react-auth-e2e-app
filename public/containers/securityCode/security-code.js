@@ -8,8 +8,6 @@ import {fetchSecurityCode} from '../../actions/index';
 export const validate = (values) => {
     const errors = {};
 
-    console.log('values: ', values);
-
     if(!values.stage) {
         errors.stage =  'Required';
     }
@@ -24,8 +22,6 @@ export const validate = (values) => {
 class SecurityCode extends Component {
 
     render() {
-
-        console.log('props == ', this.props);
 
         const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
 
@@ -42,7 +38,7 @@ class SecurityCode extends Component {
             );
 
         const renderCode = (code) => {
-            if(!code) {
+            if(code.Error) {
                 return (
                     <div className="form-group text-center text-danger pull-right col-sm-2">
                         <p className="security-code-danger"><i className="fa fa-exclamation-triangle security-code-danger">  </i> </p>
@@ -52,7 +48,7 @@ class SecurityCode extends Component {
             } else {
                return (
                    <div className="form-group security-code-retrieved pull-right col-sm-2">
-                       <label>{code}</label>
+                       <label>{code.SecurityCode}</label>
                    </div>
                );
             }
@@ -64,7 +60,8 @@ class SecurityCode extends Component {
                 placeholder="CCP"
                 type="text"
                 hintText="claimscollectionserv stage2xx"
-                component={Input}/>
+                component={Input}
+                defaultValue="stage2hx15305"/>
             );
 
         const renderAccountField = () => (<Field
@@ -72,7 +69,7 @@ class SecurityCode extends Component {
                     placeholder="Account Number or Email"
                     type="text"
                     component={Input}
-                    defaultValue={this.props.user && this.props.user.accountNumber || ''}
+                    defaultValue="auth-auto-20025970105847044@paypal.com"
             />
             );
 
@@ -100,7 +97,7 @@ class SecurityCode extends Component {
                             {renderButton()}
                         </div>
 
-                        {renderCode(this.props.securityCodeFetched.code)}
+                        {renderCode(this.props.securityCodeFetched)}
 
                     </form>
                 </div>

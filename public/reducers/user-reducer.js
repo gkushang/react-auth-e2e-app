@@ -1,7 +1,7 @@
-import Constants from '../helpers/contants';
+import Constants from '../actions/types';
 
 export default function(state = null, action) {
-    console.log('action user reducer: ', action);
+
     switch (action.type) {
 
         case Constants.CHALLENGE_SELECTED :
