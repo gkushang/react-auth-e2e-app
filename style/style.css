@@ -1,0 +1,160 @@
+
+body {
+    padding-top: 70px;
+}
+
+#wrapper {
+    position:absolute;
+    width: 100%;
+    left: 0;
+}
+
+.panel-color {
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.33);
+    -moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.33);
+    box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.33);
+    height: auto;
+}
+
+.panel-list-color {
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.20);
+    -moz-box-shadow:    0px 0px 1px 0px rgba(50, 50, 50, 0.20);
+    box-shadow:         0px 0px 1px 0px rgba(50, 50, 50, 0.20);
+}
+
+.user-info {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.fa {
+    padding-right: 5px;
+}
+
+.type-info {
+    padding-bottom:30px;
+    height:18px;
+}
+
+.auth-panel {
+    float: left;
+    position: inherit;
+    width: 80%;
+    height: 493px;
+    border-radius:5px;
+}
+
+.user-info-title {
+    padding: 5px;
+
+}
+
+.panel-heading {
+    font-size: 18px;
+}
+.user-info-action {
+    line-height: 493px;
+    color: lightgray;
+    font-size: 26px;
+}
+
+.pop-user-panel {
+    height: auto;
+}
+.security-code-fetch {
+    float: left;
+    position: relative;
+    width: 80%;
+    height: 84px;
+    border-radius:5px;
+    z-index:1 !important;
+}
+
+.security-code-error {
+    width: 100px;
+    margin-top: -25px;
+    text-align: center;
+    border-color: #ffa5a5 !important;
+    bottom: 0;
+    left: 0;
+    z-index:20 !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.security-code-error-txt {
+    margin-top: 8px;
+    border-color: #ffa5a5 !important;
+    height: 45px;
+    overflow: hidden !important;
+}
+
+.generating {
+    margin-top: 225px;
+    font-size: 26px;
+}
+
+.creating-user-link {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+span { display:block; /* Pre-existing code */ }
+
+span.inline {
+    display:inline;
+}
+
+.security-field {
+    float: top; !important;
+    display: inline-block !important;
+    font-size: 18px !important;
+}
+.security-code-btn {
+    height: 100px;
+    vertical-align: middle;
+    padding-top: 25px;
+
+    /*background-color: black;*/
+}
+
+.security-code-panel {
+    padding: 50px;
+    vertical-align: middle;
+}
+
+.security-code-danger{
+    font-size: 40px;
+    padding-top: 8px;
+}
+.security-code-not-found {
+    font-size: 13px;
+    height: 15px;
+    vertical-align: middle !important;
+    margin-top: -15px;
+}
+
+
+.security-code-retrieved {
+    letter-spacing: 10px;
+    font-size: 34px;
+    line-height: 48px;
+    color: darkgray;
+    vertical-align: middle;
+
+    text-align: center;
+
+    display: table-cell;
+
+
+    width: 100%;
+
+    padding: 16px 15px 16px;
+    height: 100%;
+    overflow:hidden;
+    border-radius:5px;
+}
+
+.creating-user-link:hover {
+    color: #7f7fff !important;
+}
