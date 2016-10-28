@@ -1,2 +1,3 @@
 # react-auth-e2e-app
-User interface to pop/create auth users, retrieve SMS & Email security codes, API docs, PN Simulator
+A Complete E2E solution for Auth Identity
+> User interface to pop/create auth users, retrieve SMS & Email security codes, API docs, PN Simulator etc
