@@ -31,12 +31,13 @@ export function selectSecurityCodeChallenge(securityCodeChallenge) {
 }
 
 export function fetchSecurityCode(challenge, params) {
-
+    console.log('Fetch Security Code:  ', challenge, params);
     return (dispatch) => {
         securityCode({
             challenge,
             params
         }).then(function(code) {
+            code = code.data;
             console.log('Fetch Security Code. CODE IS ', code);
             dispatch({
                 type: Types.SECURITY_CODE_CHALLENGE_FETCH,

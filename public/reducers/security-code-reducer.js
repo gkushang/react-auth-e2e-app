@@ -1,16 +1,18 @@
-import Constants from '../actions/types';
+import Types from '../actions/types';
 
 export default function(state = {
     type: 'Sms',
     key: 'sms'}, action) {
 
+    console.log('action: ', action);
+
   switch (action.type) {
 
-        case Constants.SECURITY_CODE_CHALLENGE_SELECTED :
+        case Types.SECURITY_CODE_CHALLENGE_SELECTED :
             return action.payload;
 
-        case Constants.SECURITY_CODE_CHALLENGE_FETCH :
-              return action.payload;
+      case Types.SECURITY_CODE_CHALLENGE_FETCH :
+              return {...state, code: action.code };
 
         default :
             return state;

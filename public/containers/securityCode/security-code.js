@@ -37,8 +37,9 @@ class SecurityCode extends Component {
             </div>
             );
 
-        const renderCode = (code) => {
-            if(code.Error) {
+        const renderCode = (retrievedCode) => {
+            if(retrievedCode.code)
+            if(retrievedCode.code.Error) {
                 return (
                     <div className="form-group text-center text-danger pull-right col-sm-2">
                         <p className="security-code-danger"><i className="fa fa-exclamation-triangle security-code-danger">  </i> </p>
@@ -48,7 +49,7 @@ class SecurityCode extends Component {
             } else {
                return (
                    <div className="form-group security-code-retrieved pull-right col-sm-2">
-                       <label>{code.SecurityCode}</label>
+                       <label>{retrievedCode.code.SecurityCode}</label>
                    </div>
                );
             }
@@ -109,6 +110,8 @@ class SecurityCode extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log('stagte in sec code is ', state);
+
     return {
         securityCodeChallenge: state.securityCodeChallenge,
         securityCodeFetched: state.securityCodeFetched,
