@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {selectChallenge} from '../../actions/index';
 import {bindActionCreators} from 'redux';
 import UserInformation from './user-information';
+import {List, ListItem} from 'material-ui/List';
 
 class ChallengesList extends Component {
 
@@ -11,13 +12,13 @@ class ChallengesList extends Component {
         return (
             this.props.challenges.map((challenge) => {
                 return (
-                    <a
+                    <ListItem
                         href="#"
                         key={challenge.type}
                         onClick={() => this.props.selectChallenge(challenge)}
                         className="list-group-item panel-list-color">
                         {challenge.type}
-                    </a>
+                    </ListItem>
                 )
             })
         )
@@ -26,9 +27,9 @@ class ChallengesList extends Component {
     render() {
         return (
                 <div className="container-fluid pop-user-panel">
-                    <div className="col-md-2 ">
+                    <List className="col-md-2 ">
                         {this.renderList()}
-                    </div>
+                    </List>
                     <UserInformation />
                 </div>
         );

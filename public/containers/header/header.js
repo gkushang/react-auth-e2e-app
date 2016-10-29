@@ -3,10 +3,10 @@ import React from 'react';
 export default function() {
     return (
         <div>
-            <nav className="navbar  navbar-default navbar-fixed-top">
+            <nav className="navbar navbar-default navbar-transparent navbar-fixed-top">
                 <div className="container-fluid">
 
-                    <div className="navbar-header">
+                    <div className="navbar-inner">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"> </span>
@@ -14,7 +14,7 @@ export default function() {
                             <span className="icon-bar"> </span>
                         </button>
 
-                        <a className="navbar-brand" href="#">E2E authnodeweb</a>
+                        <a className="navbar-brand navbar-default" href="#">E2E authnodeweb</a>
                     </div>
 
                     <div id="navbar" className="navbar-collapse collapse">

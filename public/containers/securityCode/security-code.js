@@ -43,8 +43,7 @@ class SecurityCode extends Component {
                 return (
                     <div className="form-group text-center text-info security-code-error-text pull-right col-sm-2">
                         <span className="loading">
-                            <i className="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"> </i>
-                            <p className="sr-only">Loading...</p>
+                            <i className="fa fa-spinner fa-spin fa-3x" aria-hidden="true"> </i>
                         </span>
                     </div>
                 );

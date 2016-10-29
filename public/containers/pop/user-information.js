@@ -45,7 +45,7 @@ class UserInformation extends Component {
         return (
             <div className="container-fluid auth-panel panel-color">
 
-                <div className="panel-heading text-info">
+                <div className="panel-heading text-primary">
                     <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {info.challenge.type}</p>
                 </div>
 
