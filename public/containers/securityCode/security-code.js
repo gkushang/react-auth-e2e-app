@@ -4,6 +4,8 @@ import Input from '../presentational/Input';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchSecurityCode} from '../../actions/index';
+import CircularProgress from 'material-ui/CircularProgress';
+
 
 export const validate = (values) => {
     const errors = {};
@@ -43,7 +45,7 @@ class SecurityCode extends Component {
                 return (
                     <div className="form-group text-center text-info security-code-error-text pull-right col-sm-2">
                         <span className="loading">
-                            <i className="fa fa-spinner fa-spin fa-3x" aria-hidden="true"> </i>
+                            <CircularProgress />
                         </span>
                     </div>
                 );

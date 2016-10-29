@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {selectSecurityCodeChallenge} from '../../actions/index';
 import {bindActionCreators} from 'redux';
 import SecurityCode from './security-code';
+import {List, ListItem} from 'material-ui/List';
 
 
 class SecurityCodeList extends Component {
@@ -11,14 +12,14 @@ class SecurityCodeList extends Component {
         return (
             this.props.securityCodesChallenges.map((securityCodeChallenge, i) => {
                 return (
-                    <a
+                    <ListItem
                         href="#"
                         key={securityCodeChallenge.type}
                         onClick={() => this.props.selectSecurityCodeChallenge(securityCodeChallenge)}
                         className={i === 0 ? "list-group-item list-group-item-action panel-list-color active" :
                             "list-group-item panel-list-color list-group-item-action"}>
                         {securityCodeChallenge.type}
-                    </a>
+                    </ListItem>
                 )
             })
         )
@@ -27,9 +28,9 @@ class SecurityCodeList extends Component {
     render() {
         return (
             <div className="container-fluid security-code-panel">
-                <div className="col-md-2">
+                <List className="col-md-2">
                     {this.renderList()}
-                </div>
+                </List>
                 <SecurityCode />
             </div>
         );
