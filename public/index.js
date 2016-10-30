@@ -7,7 +7,7 @@ import reducers from './reducers';
 import ReduxThunk from 'redux-thunk';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
 const store = (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore);
 
@@ -16,7 +16,7 @@ const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(store);
 ReactDOM.render(
 
     <Provider store={createStoreWithMiddleware(reducers)}>
-        <MuiThemeProvider muiTheme={getMuiTheme()} >
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)} >
             <App />
         </MuiThemeProvider>
     </Provider>

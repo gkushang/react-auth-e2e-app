@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchSecurityCode} from '../../actions/index';
 import CircularProgress from 'material-ui/CircularProgress';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
 
 
 export const validate = (values) => {
@@ -27,16 +30,37 @@ class SecurityCode extends Component {
 
         const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
 
+        const styles = {
+            button: {
+                margin: 12,
+                width: 400
+            }
+        };
+
         const renderButton = () => (
-            <div>
-                <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={ pristine || submitting } >
-                    <i className="fa fa-paper-plane" aria-hidden="true"> </i>
-                    Security Code
-                </button>
-            </div>
+            // <div>
+            //     <button
+            //         type="submit"
+            //         className="btn btn-primary"
+            //         disabled={ pristine || submitting } >
+            //         <i className="fa fa-paper-plane" aria-hidden="true"> </i>
+            //         Security Code
+            //     </button>
+            // </div>
+
+        <RaisedButton
+            icon={<i className="fa fa-paper-plane" aria-hidden="true"> </i>}
+            type="submit"
+            label="Security Code"
+            labelPosition="before"
+            className="button-submit"
+            primary={true}
+            />
+            // <RaisedButton  label="Label before"
+            //                labelPosition="before"
+            //                primary={true}
+            //                style={styles.button}
+            //               icon={<i className="fa fa-paper-plane" aria-hidden="true"> </i>} />
             );
 
         const renderCode = (retrievedCode, isLoading) => {
@@ -95,11 +119,19 @@ class SecurityCode extends Component {
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
 
+        const style = {
+            height: 100,
+            width: 1100,
+            margin: 8,
+            textAlign: 'center',
+            backgroundColor: '#393d42',
+            color: '#ffffff',
+            float: 'right',
+            'border-radius': 5
+        };
 
         return (
-
-            <div>
-                <div className="security-code-fetch panel-color">
+             <Paper style={style} zDepth={2} rounded={true}>
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
                         <div className="form-group col-sm-4">
@@ -111,17 +143,14 @@ class SecurityCode extends Component {
                         </div>
 
 
-                        <div className="form-group col-sm-1 security-code-btn ">
+                        <div className="form-group col-sm-1 security-code-btn">
                             {renderButton()}
                         </div>
 
                         {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
 
                     </form>
-                </div>
-
-            </div>
-
+                </Paper>
         );
     }
 }

@@ -10,13 +10,13 @@ class UserInformation extends Component {
 
         if (!info) {
             return (
-                <div className="container-fluid auth-panel panel-color text-center user-info-action">
+                <div className="container-fluid user-info-panel panel-color text-center user-info-action">
                     Select Challenge to Pop User
                 </div>
             );
         } else if(!info.user) {
             return (
-                <div className="container-fluid auth-panel panel-color text-center text-danger user-info-action fade in">
+                <div className="container-fluid user-info-panel panel-color text-center text-danger user-info-action fade in">
                     <i className="fa fa-exclamation-triangle">  </i> Error retrieving user information
                 </div>
             );
@@ -24,7 +24,7 @@ class UserInformation extends Component {
             const createUserUrl = "http://authserv-8375.ccg21.dev.paypalcorp.com/msmaster/users/create?challengeType=" + info.challenge.key;
             return (
                 <div className="row">
-                    <div className="container-fluid auth-panel panel-color text-center text-danger">
+                    <div className="container-fluid user-info-panel panel-color text-center text-danger">
                         <h4 className="generating">    <i className="fa fa-exclamation-triangle">  </i>
                             {info.challenge.type} user is not available yet
                         </h4>
@@ -43,20 +43,28 @@ class UserInformation extends Component {
 
         const challenges = info.challenges.join(', ');
 
+        // float: right;
+        // position: inherit;
+        // width: 80%;
+        // height: 493px;
+        // border-radius:5px;
+
         const style = {
-            height: 600,
-            width: 1100,
-            margin: 8,
+            'margin-left': 60,
+            float: 'left',
             textAlign: 'center',
             backgroundColor: '#393d42',
-            color: '#ffffff'
+            color: '#ffffff',
+            'border-radius':5,
+            width: 950,
+            height: 580
         };
 
         return (
-            <Paper className="container-fluid auth-panel panel-color" style={style} zDepth={2} rounded={true}>
+            <Paper className="container-fluid" style={style} zDepth={2} rounded={true}>
 
                 <div className="panel-heading text-primary">
-                    <p className="text-center user-info-title "><i className="fa fa-paypal"> </i> {info.challenge.type}</p>
+                    <p className="text-center user-info-title"><i className="fa fa-paypal"> </i> {info.challenge.type}</p>
                 </div>
 
                 <div className="col-sm-12">

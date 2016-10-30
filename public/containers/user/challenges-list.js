@@ -8,7 +8,6 @@ import {List, ListItem} from 'material-ui/List';
 class ChallengesList extends Component {
 
     renderList() {
-
         return (
             this.props.challenges.map((challenge) => {
                 return (
@@ -16,7 +15,8 @@ class ChallengesList extends Component {
                         href="#"
                         key={challenge.type}
                         onClick={() => this.props.selectChallenge(challenge)}
-                        className="list-group-item panel-list-color">
+                        style={{'font-size': 16, active: 'white'}}
+                        className="list-group-item challenge-list-group-item">
                         {challenge.type}
                     </ListItem>
                 )
@@ -26,8 +26,8 @@ class ChallengesList extends Component {
 
     render() {
         return (
-                <div className="container-fluid pop-user-panel">
-                    <List className="col-md-2 ">
+                <div className="container-fluid">
+                    <List className="col-md-2 challenge-list-group">
                         {this.renderList()}
                     </List>
                     <UserInformation />

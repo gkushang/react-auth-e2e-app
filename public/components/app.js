@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import ChallengeList from '../containers/pop/challenges-list';
+import ChallengeList from '../containers/user/challenges-list';
 import SecurityCodeList from '../containers/securityCode/security-code-list'
 
 import Header from '../containers/header/header';
-import ListExampleSimple from '../containers/t';
 
 export default class App extends Component {
     render() {

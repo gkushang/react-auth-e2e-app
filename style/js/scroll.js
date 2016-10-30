@@ -16,3 +16,20 @@ $(function() {
     });
 });
 
+$(".container-fluid").click(function(e) {
+    e.preventDefault();
+    // Do your stuff
+});
+
+$('.challenge-list-group-item').on('click', function(e) {
+    var $this = $(this);
+    $('.challenge-list-group').find('.active').removeClass('active');
+    $this.addClass('active');
+});
+
+$('.security-list-group-item').on('click', function(e) {
+    var $this = $(this);
+    $('.security-list-group').find('.active').removeClass('active');
+    $this.addClass('active');
+});
+

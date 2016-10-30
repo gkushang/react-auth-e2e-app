@@ -26,29 +26,22 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.panel-color {
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.33);
-    -moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.33);
-    box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.33);
-    height: auto;
-    /*background-color: #3e444c !important;*/
-    /*color: #c8c8c8 !important;*/
-
-}
-
-.panel-list-color {
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.20);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.20);
-    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.20);
-    background-color: #3e444c !important;
-    color: #c8c8c8 !important;
-    border: 1px solid #51565d !important;
-    text-decoration: none;
-}
+/*.panel-color {*/
+    /*-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.33);*/
+    /*-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.33);*/
+    /*box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.33);*/
+    /*height: auto;*/
+/*}*/
 
 .user-info {
-    padding: 5px;
-    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 10px;
+    font-size: 15px;
+    color: lightblue;
+}
+
+.list-group-item.active {
+    background-color: #303030 !important;
 }
 
 .fa {
@@ -60,12 +53,13 @@ body {
     height:18px;
 }
 
-.auth-panel {
+.user-info-panel {
     float: right;
     position: inherit;
     width: 80%;
     height: 493px;
     border-radius:5px;
+
 }
 
 .user-info-title {
@@ -80,20 +74,6 @@ body {
     line-height: 600px;
     color: lightgray;
     font-size: 26px;
-}
-
-.pop-user-panel {
-    height: 100%;
-}
-
-.security-code-fetch {
-    float: right;
-    position: relative;
-    width: 80%;
-    height: 84px;
-    border-radius:5px;
-    z-index:1 !important;
-    color: white !important;
 }
 
 .security-code-error {
@@ -139,12 +119,13 @@ span.inline {
 .security-code-btn {
     height: 100px;
     vertical-align: middle;
-    padding-top: 25px;
+    padding-top: 33px;
 }
 
 .security-code-panel {
     padding: 50px;
     vertical-align: middle;
+
 }
 
 .security-code-danger{
