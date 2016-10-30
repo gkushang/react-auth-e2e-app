@@ -55,7 +55,7 @@ class UserInformation extends Component {
             textAlign: 'center',
             backgroundColor: '#393d42',
             color: '#ffffff',
-            'border-radius':5,
+            borderRadius: 5,
             width: 950,
             height: 580
         };

@@ -8,6 +8,10 @@ import CircularProgress from 'material-ui/CircularProgress';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
 
 
 export const validate = (values) => {
@@ -36,32 +40,6 @@ class SecurityCode extends Component {
                 width: 400
             }
         };
-
-        const renderButton = () => (
-            // <div>
-            //     <button
-            //         type="submit"
-            //         className="btn btn-primary"
-            //         disabled={ pristine || submitting } >
-            //         <i className="fa fa-paper-plane" aria-hidden="true"> </i>
-            //         Security Code
-            //     </button>
-            // </div>
-
-        <RaisedButton
-            icon={<i className="fa fa-paper-plane" aria-hidden="true"> </i>}
-            type="submit"
-            label="Security Code"
-            labelPosition="before"
-            className="button-submit"
-            primary={true}
-            />
-            // <RaisedButton  label="Label before"
-            //                labelPosition="before"
-            //                primary={true}
-            //                style={styles.button}
-            //               icon={<i className="fa fa-paper-plane" aria-hidden="true"> </i>} />
-            );
 
         const renderCode = (retrievedCode, isLoading) => {
 
@@ -94,6 +72,32 @@ class SecurityCode extends Component {
                 )
             }
         };
+
+
+        const renderButton = () => (
+
+            // <div>
+            //     <button
+            //         type="submit"
+            //         className="btn btn-primary"
+            //         disabled={ pristine || submitting } >
+            //         <i className="fa fa-paper-plane" aria-hidden="true"> </i>
+            //         Security Code
+            //     </button>
+            // </div>
+
+            <RaisedButton
+                label={<span> <i className="fa fa-paper-plane" aria-hidden="true"> </i> Security Code </span>}
+                className="raised-button"
+                labelStyle={{'font-size' : 13, color: 'lightgray', display: 'block',
+                    textAlign: 'left', verticalAlign: 'middle', position: 'relative'}}
+                primary={true}
+                style={{margin: 2, display: 'inline-block'}}
+                buttonStyle={{width: 165}}
+                type="submit"
+
+            />
+        );
 
 
         const renderStageField = () => (
