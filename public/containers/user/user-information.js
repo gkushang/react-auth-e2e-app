@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
 
 class UserInformation extends Component {
 
@@ -11,7 +12,7 @@ class UserInformation extends Component {
         if (!info) {
             return (
                 <div className="container-fluid user-info-panel text-center user-info-action">
-                    Select Challenge to Pop User
+                    Select a Challenge to Pop User
                 </div>
             );
         } else if(!info.user) {
@@ -55,17 +56,20 @@ class UserInformation extends Component {
         };
 
         return (
-            <Paper className="container-fluid common" style={style} zDepth={2} rounded={true}>
+            <Paper className="container-fluid common" style={style} zDepth={1} rounded={true}>
 
                 <div className="panel-heading text-primary">
                     <p className="text-center user-info-title"><i className="fa fa-paypal"> </i> {info.challenge.type}</p>
                 </div>
 
-                <div className="col-sm-12">
+
+                <div className="col-sm-12 user-info-panel">
                     <div className="row">
+
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {info.user.emailAddress}</p>
                         </div>
+
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.accountNumber}</p>
                         </div>
@@ -73,11 +77,9 @@ class UserInformation extends Component {
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info  pull-left"><i className="fa fa-user"> </i> {info.user.firstName}</p>
                         </div>
+
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-home"> </i> {info.user.homeAddress1} </p>
-                            {/*<p className="pull-right">{this.props.authJson.homeCity} </p>*/}
-                            {/*<p className="pull-right">{this.props.authJson.homeCountry} </p>*/}
-
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
@@ -109,19 +111,10 @@ class UserInformation extends Component {
                             <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {info.user.securityAnswer2} </p>
                         </div>
 
-                        <div className="col-xs-4 col-sm-6">
-                            <p className="user-info  pull-left"><i className="fa fa-hand-o-right"> </i> {info.available} left</p>
-                        </div>
-
-                        <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-list-ul" aria-hidden="true"> </i> {challenges} </p>
-                        </div>
-
-                        <p className="text-center page-header"><i className="fa"> </i>  </p>
-
-                        <div className="col-xs-8 col-sm-6">
+                        <div className="col-xs-8 col-sm-6 ">
                             <p className="user-info  pull-left"><i className="fa fa-cc-visa"> </i> 7373 3939 3784 6268</p>
                         </div>
+
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-cc-mastercard"> </i> 7373 3939 3784 6268</p>
                         </div>
@@ -129,8 +122,17 @@ class UserInformation extends Component {
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info  pull-left"><i className="fa fa-cc-amex"> </i> 7373 3939 3784 6268</p>
                         </div>
+
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> 7373 3939 3784 6268</p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info  pull-left"><i className="fa fa-hand-o-right"> </i> {info.available} left</p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-list-ul" aria-hidden="true"> </i> {challenges} </p>
                         </div>
 
 

@@ -10,6 +10,7 @@ export default (field) => {
                 className="security-field common small-font"
                 errorStyle={{"font-size": "10px"}}
                 hintStyle={{"font-size": "16px"}}
+                floatingLabelStyle={{"font-size": "16px"}}
                 hintText={field.hintText}
                 {...field.input}
             />

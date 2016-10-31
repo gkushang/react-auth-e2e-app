@@ -90,14 +90,13 @@ class SecurityCode extends Component {
             );
 
         const handleFetch = (params) => {
-            console.log('clicked');
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
 
         const style = {
             height: 70,
-            width: 180,
-            marginLeft: 30,
+            width: 190,
+            marginLeft: 38,
             marginTop: 19,
             textAlign: 'center',
             backgroundColor: '#393d42',
@@ -122,7 +121,7 @@ class SecurityCode extends Component {
                             {renderButton(this.props)}
                         </div>
 
-                        <Paper style={style} zDepth={2} rounded={true}>
+                        <Paper style={style} zDepth={1} rounded={true}>
                             {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
                         </Paper>
 
