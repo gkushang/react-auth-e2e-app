@@ -28,6 +28,7 @@ class SecurityCode extends Component {
 
         const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
 
+        /*
         const renderCode = (retrievedCode, isLoading) => {
 
             if(isLoading) {
@@ -59,20 +60,36 @@ class SecurityCode extends Component {
                 )
             }
         };
+        */
+
+        const renderCode = (retrievedCode, isLoading) => {
+
+            if(isLoading) {
+                return (
+                        <span className="loading col-sm-3">
+                            <CircularProgress />
+                        </span>
+                );
+            }
+
+            if(retrievedCode.code) {
+                return retrievedCode.code.Error ? (
+                    <span className="text-danger">
+                        <p className="security-code-danger"><i
+                            className="fa fa-exclamation-triangle security-code-danger"> </i></p>
+                        <p className="security-code-not-found">Not Found</p>
+                        </span>
+                ) : (
+                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
+                        <label>{retrievedCode.code.SecurityCode || ''}</label>
+                    </div>
+                );
+            }
+        };
 
 
-        const renderButton = (props) => (
 
-            // <div>
-            //     <button
-            //         type="submit"
-            //         className="btn btn-primary"
-            //         disabled={ pristine || submitting } >
-            //         <i className="fa fa-paper-plane" aria-hidden="true"> </i>
-            //         Security Code
-            //     </button>
-            // </div>
-
+        const renderButton = () => (
             <RaisedButton
                 label={<span> <i className="fa fa-paper-plane" aria-hidden="true"> </i> Security Code </span>}
                 className="raised-button"
@@ -122,36 +139,46 @@ class SecurityCode extends Component {
         //     'border-radius': 5
         // };
 
+        const style = {
+            height: 70,
+            width: 180,
+            marginLeft: 30,
+            marginTop: 10,
+            textAlign: 'center',
+            backgroundColor: '#393d42',
+            color: '#ffffff',
+            float: 'left',
+            paddingRight: 100,
+            'border-radius': 5,
+        };
+
         return (
-             //<Paper style={style} zDepth={2} rounded={true}>
-            <div>
+            <div className="security-code-panel">
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-sm-2">
+                        <div className="form-group col-sm-3 col-color-stg">
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-sm-5">
+                        <div className="form-group col-sm-3 col-color-acc">
                             {renderAccountField()}
                         </div>
 
-
-                        <div className="form-group col-sm-2 security-code-btn">
+                        <div className="form-group col-sm-2 pull-left security-code-btn">
                             {renderButton(this.props)}
                         </div>
 
-                        {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
+                        <Paper className="pull-left" style={style} zDepth={2} rounded={true}>
+                            {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
+                        </Paper>
 
                     </form>
             </div>
-               // </Paper>
         );
     }
 }
 
 function mapStateToProps(state) {
-    console.log('stagte in sec code is ', state);
-
     return {
         securityCodeChallenge: state.securityCodeChallenge,
         securityCodeFetched: state.securityCodeFetched,

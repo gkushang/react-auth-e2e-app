@@ -116,17 +116,24 @@ span.inline {
     display: inline-block !important;
     font-size: 18px !important;
 }
+
 .security-code-btn {
-    height: 100px;
-    vertical-align: middle;
-    padding-top: 33px;
-    float: left;
+    padding-top: 27px;
+    /*background-color: blue;*/
 }
 
-.security-code-panel {
-    padding: 50px;
-    vertical-align: middle;
+/*.col-color-stg {*/
+    /*background-color: orangered;*/
+/*}*/
 
+/*.col-color-acc {*/
+    /*background-color: orange;*/
+/*}*/
+
+.security-code-panel {
+    padding-left: 285px;
+    padding-top: 5px;
+    vertical-align: middle;
 }
 
 .security-code-danger{
