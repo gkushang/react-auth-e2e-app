@@ -15,7 +15,7 @@ class ChallengesList extends Component {
                         href="#"
                         key={challenge.type}
                         onClick={() => this.props.selectChallenge(challenge)}
-                        style={{'font-size': 16, active: 'white'}}
+                        style={{'font-size': 15, color: '#9E9E9E', 'letterSpacing': 0.3}}
                         className="list-group-item challenge-list-group-item">
                         {challenge.type}
                     </ListItem>

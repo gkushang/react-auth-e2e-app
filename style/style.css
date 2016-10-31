@@ -41,7 +41,8 @@ body {
 }
 
 .list-group-item.active {
-    background-color: #303030 !important;
+    background-color: #393d42 !important;
+    color: white !important;
 }
 
 .fa {
