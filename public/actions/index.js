@@ -7,6 +7,30 @@ export function selectChallenge(challenge) {
 
         const updateUser = (user) => {
             user.data.challenge = challenge;
+            console.log('User: ', user);
+            if(user.data.creditcard) {
+                user.data.creditcard.map(function(creditCard) {
+                    if(creditCard.cardType === 'Discover') {
+                        user.data.discover = creditCard
+                    }
+
+                    if(creditCard.cardType === 'Visa') {
+                        user.data.visa = creditCard
+                    }
+
+                    if(creditCard.cardType === 'Master') {
+                        user.data.master = creditCard
+                    }
+
+                    if(creditCard.cardType === 'Amex') {
+                        user.data.amex = creditCard
+                    }
+
+                })
+            }
+
+            console.log('User: ', user);
+
             return user.data;
         };
 

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
 
 class UserInformation extends Component {
 
@@ -74,12 +73,28 @@ class UserInformation extends Component {
                             <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.accountNumber}</p>
                         </div>
 
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info  pull-left"><i className="fa fa-user-plus"> </i> {info.user.accountType}</p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-desktop" aria-hidden="true"> </i> {info.stage} </p>
+                        </div>
+
                         <div className="col-xs-8 col-sm-6">
                             <p className="user-info  pull-left"><i className="fa fa-user"> </i> {info.user.firstName}</p>
                         </div>
 
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-home"> </i> {info.user.homeAddress1} </p>
+                            <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.lastName} </p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-left"><i className="fa fa-home"> </i> {info.user.homeAddress1} </p>
+                        </div>
+
+                        <div className="col-xs-4 col-sm-6">
+                            <p className="user-info pull-right"><i className="fa fa-map-marker"> </i> {info.user.homeCity} </p>
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
@@ -87,14 +102,6 @@ class UserInformation extends Component {
                         </div>
                         <div className="col-xs-4 col-sm-6">
                             <p className="user-info pull-right"><i className="fa fa-phone"> </i> {info.user.homePhoneNumber} </p>
-                        </div>
-
-                        <div className="col-xs-4 col-sm-6">
-                            <p className="user-info  pull-left"><i className="fa fa-user-plus"> </i> {info.user.accountType}</p>
-                        </div>
-
-                        <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-desktop" aria-hidden="true"> </i> {info.stage} </p>
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
@@ -112,23 +119,41 @@ class UserInformation extends Component {
                         </div>
 
                         <div className="col-xs-8 col-sm-6 ">
-                            <p className="user-info  pull-left"><i className="fa fa-cc-visa"> </i> 7373 3939 3784 6268</p>
+                            {info.visa ?
+                                <p className="user-info pull-left">
+                                    <i className="fa fa-cc-visa">
+                                    </i> {info.visa.cardNumber}
+                                </p> :
+                                <p className="user-info pull-left">
+                                    <i className="fa fa-key">
+                                    </i> {info.user.password}
+
+                                </p>}
                         </div>
 
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-cc-mastercard"> </i> 7373 3939 3784 6268</p>
+                            {info.master ?
+                                <p className="user-info pull-right">
+                                    <i className="fa fa-cc-mastercard">
+                                    </i> {info.master.cardNumber}
+                                </p> :
+                                <p className="user-info pull-right">
+                                    <i className="fa fa-hand-o-right">
+                                    </i> {info.status}
+
+                                </p>}
                         </div>
 
                         <div className="col-xs-8 col-sm-6">
-                            <p className="user-info  pull-left"><i className="fa fa-cc-amex"> </i> 7373 3939 3784 6268</p>
+                            {info.amex ? <p className="user-info pull-left"><i className="fa fa-cc-amex"> </i> {info.amex.cardNumber} </p> : <p> </p>}
                         </div>
 
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> 7373 3939 3784 6268</p>
+                            {info.discover ? <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> {info.discover.cardNumber} </p> : <p> </p>}
                         </div>
 
                         <div className="col-xs-4 col-sm-6">
-                            <p className="user-info  pull-left"><i className="fa fa-hand-o-right"> </i> {info.available} left</p>
+                            <p className="user-info  pull-left"><i className="fa fa-hourglass-half"> </i> {info.available} left</p>
                         </div>
 
                         <div className="col-xs-4 col-sm-6">
