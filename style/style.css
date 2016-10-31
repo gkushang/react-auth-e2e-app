@@ -120,6 +120,7 @@ span.inline {
     height: 100px;
     vertical-align: middle;
     padding-top: 33px;
+    float: left;
 }
 
 .security-code-panel {

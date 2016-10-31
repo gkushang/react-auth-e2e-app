@@ -7,12 +7,6 @@ import {fetchSecurityCode} from '../../actions/index';
 import CircularProgress from 'material-ui/CircularProgress';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
-import IconButton from 'material-ui/IconButton';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
-
-
 
 export const validate = (values) => {
     const errors = {};
@@ -34,18 +28,11 @@ class SecurityCode extends Component {
 
         const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
 
-        const styles = {
-            button: {
-                margin: 12,
-                width: 400
-            }
-        };
-
         const renderCode = (retrievedCode, isLoading) => {
 
             if(isLoading) {
                 return (
-                    <div className="form-group text-center text-info security-code-error-text pull-right col-sm-2">
+                    <div className="form-group text-center text-info security-code-error-text pull-right col-sm-1">
                         <span className="loading">
                             <CircularProgress />
                         </span>
@@ -74,7 +61,7 @@ class SecurityCode extends Component {
         };
 
 
-        const renderButton = () => (
+        const renderButton = (props) => (
 
             // <div>
             //     <button
@@ -92,10 +79,10 @@ class SecurityCode extends Component {
                 labelStyle={{'font-size' : 13, color: 'lightgray', display: 'block',
                     textAlign: 'left', verticalAlign: 'middle', position: 'relative'}}
                 primary={true}
+                type="submit"
                 style={{margin: 2, display: 'inline-block'}}
                 buttonStyle={{width: 165}}
-                type="submit"
-
+                onTouchTap={this.context.submit}
             />
         );
 
@@ -120,41 +107,44 @@ class SecurityCode extends Component {
             );
 
         const handleFetch = (params) => {
+            console.log('clicked');
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
 
-        const style = {
-            height: 100,
-            width: 1100,
-            margin: 8,
-            textAlign: 'center',
-            backgroundColor: '#393d42',
-            color: '#ffffff',
-            float: 'right',
-            'border-radius': 5
-        };
+        // const style = {
+        //     height: 100,
+        //     width: 1100,
+        //     margin: 8,
+        //     textAlign: 'center',
+        //     backgroundColor: '#393d42',
+        //     color: '#ffffff',
+        //     float: 'right',
+        //     'border-radius': 5
+        // };
 
         return (
-             <Paper style={style} zDepth={2} rounded={true}>
+             //<Paper style={style} zDepth={2} rounded={true}>
+            <div>
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-sm-4">
+                        <div className="form-group col-sm-2">
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-sm-4">
+                        <div className="form-group col-sm-5">
                             {renderAccountField()}
                         </div>
 
 
-                        <div className="form-group col-sm-1 security-code-btn">
-                            {renderButton()}
+                        <div className="form-group col-sm-2 security-code-btn">
+                            {renderButton(this.props)}
                         </div>
 
                         {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
 
                     </form>
-                </Paper>
+            </div>
+               // </Paper>
         );
     }
 }
@@ -178,6 +168,6 @@ function mapDispatchToProps(dispatch) {
 SecurityCode = reduxForm({
     form: 'securityCodeForm',
     validate
-}, () => {})(SecurityCode);
+})(SecurityCode);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecurityCode)

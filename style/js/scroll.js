@@ -16,7 +16,12 @@ $(function() {
     });
 });
 
-$(".container-fluid").click(function(e) {
+$(".challenge-list-group").click(function(e) {
+    e.preventDefault();
+    // Do your stuff
+});
+
+$(".security-list-group").click(function(e) {
     e.preventDefault();
     // Do your stuff
 });
