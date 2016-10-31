@@ -4,6 +4,7 @@ import {selectSecurityCodeChallenge} from '../../actions/index';
 import {bindActionCreators} from 'redux';
 import SecurityCode from './security-code';
 import {List, ListItem} from 'material-ui/List';
+import Styles from 'Styles';
 
 
 class SecurityCodeList extends Component {
@@ -15,7 +16,7 @@ class SecurityCodeList extends Component {
                     <ListItem
                         href="#"
                         key={securityCodeChallenge.type}
-                        style={{'font-size': 15, color: '#9E9E9E', 'letterSpacing': 0.3}}
+                        style={Styles.listItem}
                         onClick={() => this.props.selectSecurityCodeChallenge(securityCodeChallenge)}
                         className={i === 0 ? "list-group-item security-list-group-item active" :
                             "list-group-item security-list-group-item"}>

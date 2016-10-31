@@ -4,6 +4,7 @@ import {selectChallenge} from '../../actions/index';
 import {bindActionCreators} from 'redux';
 import UserInformation from './user-information';
 import {List, ListItem} from 'material-ui/List';
+import Styles from 'Styles'
 
 class ChallengesList extends Component {
 
@@ -15,7 +16,7 @@ class ChallengesList extends Component {
                         href="#"
                         key={challenge.type}
                         onClick={() => this.props.selectChallenge(challenge)}
-                        style={{'font-size': 15, color: '#9E9E9E', 'letterSpacing': 0.3}}
+                        style={Styles.listItem}
                         className="list-group-item challenge-list-group-item">
                         {challenge.type}
                     </ListItem>

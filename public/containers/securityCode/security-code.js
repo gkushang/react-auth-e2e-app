@@ -60,7 +60,7 @@ class SecurityCode extends Component {
                 label={<span> <i className="fa fa-paper-plane" aria-hidden="true"> </i> Security Code </span>}
                 className="raised-button"
                 labelStyle={{'font-size' : 13, color: 'lightgray', display: 'block',
-                    textAlign: 'left', verticalAlign: 'middle', position: 'relative'}}
+                    textAlign: 'left', verticalAlign: 'middle', position: 'relative', fontFamily: "'Montserrat', sans-serif"}}
                 primary={true}
                 type="submit"
                 style={{margin: 2, display: 'inline-block'}}
@@ -75,7 +75,7 @@ class SecurityCode extends Component {
                 name="stage"
                 placeholder="CCP"
                 type="text"
-                hintText="claimscollectionserv stage2xx"
+                hintText="claimscollectionserv stage2"
                 component={Input}
                 />
             );
@@ -107,14 +107,14 @@ class SecurityCode extends Component {
         };
 
         return (
-            <div className="security-code-panel">
+            <div className="security-code-panel common">
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-sm-3 col-color-stg">
+                        <div className="form-group col-sm-3 common">
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-sm-3 account-number">
+                        <div className="form-group col-sm-3">
                             {renderAccountField()}
                         </div>
 

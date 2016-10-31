@@ -55,7 +55,7 @@ class UserInformation extends Component {
         };
 
         return (
-            <Paper className="container-fluid" style={style} zDepth={2} rounded={true}>
+            <Paper className="container-fluid common" style={style} zDepth={2} rounded={true}>
 
                 <div className="panel-heading text-primary">
                     <p className="text-center user-info-title"><i className="fa fa-paypal"> </i> {info.challenge.type}</p>
