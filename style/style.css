@@ -54,12 +54,11 @@ body {
 }
 
 .user-info-panel {
-    float: right;
+    float: left;
     position: inherit;
     width: 80%;
     height: 493px;
     border-radius:5px;
-
 }
 
 .user-info-title {
@@ -118,7 +117,8 @@ span.inline {
 }
 
 .security-code-btn {
-    padding-top: 27px;
+    padding-top: 35px;
+    margin-left: 15px;
     /*background-color: blue;*/
 }
 
@@ -126,19 +126,23 @@ span.inline {
     /*background-color: orangered;*/
 /*}*/
 
-/*.col-color-acc {*/
-    /*background-color: orange;*/
-/*}*/
+.account-number{
+    margin-left: 20px;
+}
 
 .security-code-panel {
     padding-left: 285px;
-    padding-top: 5px;
+    margin-top: 20px;
+    padding-bottom: 150px;
     vertical-align: middle;
 }
 
+.security-list-group {
+    margin-top: 20px;
+}
+
 .security-code-danger{
-    font-size: 40px;
-    padding-top: 8px;
+    font-size: 38px;
 }
 .security-code-not-found {
     font-size: 13px;
@@ -148,11 +152,7 @@ span.inline {
 }
 
 .loading {
-    font-size: 10px;
-    padding-top: 20px;
-    display:inline-block;;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    padding-top: 15px;
 }
 
 .security-code-error-text {
@@ -170,25 +170,13 @@ span.inline {
 
 }
 .security-code-retrieved {
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     font-size: 30px;
-    line-height: 48px;
-    vertical-align: middle;
-
-    text-align: center;
-
-    display: table-cell;
-
 
     width: 100%;
 
-    padding-top: 20px;
-    margin-right: 0px;
-    height: 85px;
-    overflow:hidden;
+    padding-top: 15px;
     border-radius:5px;
-
-    background-color: #373b40 !important;
 
 }
 

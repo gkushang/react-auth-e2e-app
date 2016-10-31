@@ -10,7 +10,7 @@ class UserInformation extends Component {
 
         if (!info) {
             return (
-                <div className="container-fluid user-info-panel panel-color text-center user-info-action">
+                <div className="container-fluid user-info-panel text-center user-info-action">
                     Select Challenge to Pop User
                 </div>
             );
@@ -43,12 +43,6 @@ class UserInformation extends Component {
 
         const challenges = info.challenges.join(', ');
 
-        // float: right;
-        // position: inherit;
-        // width: 80%;
-        // height: 493px;
-        // border-radius:5px;
-
         const style = {
             'margin-left': 60,
             float: 'left',
@@ -56,7 +50,7 @@ class UserInformation extends Component {
             backgroundColor: '#393d42',
             color: '#ffffff',
             borderRadius: 5,
-            width: 950,
+            width: 985,
             height: 580
         };
 

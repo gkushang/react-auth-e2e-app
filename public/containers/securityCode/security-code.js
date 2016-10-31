@@ -28,45 +28,11 @@ class SecurityCode extends Component {
 
         const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
 
-        /*
         const renderCode = (retrievedCode, isLoading) => {
 
             if(isLoading) {
                 return (
-                    <div className="form-group text-center text-info security-code-error-text pull-right col-sm-1">
-                        <span className="loading">
-                            <CircularProgress />
-                        </span>
-                    </div>
-                );
-            }
-
-            if(retrievedCode.code) {
-                return retrievedCode.code.Error ? (
-                    <div className="form-group text-center text-danger security-code-error-text pull-right col-sm-2">
-                            <p className="security-code-danger"><i
-                                className="fa fa-exclamation-triangle security-code-danger"> </i></p>
-                            <p className="security-code-not-found">Not Found</p>
-                    </div>
-                ) : (
-                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
-                        <label>{retrievedCode.code.SecurityCode || ''}</label>
-                    </div>
-                );
-            } else {
-                return (
-                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
-                    </div>
-                )
-            }
-        };
-        */
-
-        const renderCode = (retrievedCode, isLoading) => {
-
-            if(isLoading) {
-                return (
-                        <span className="loading col-sm-3">
+                        <span className="loading text-center">
                             <CircularProgress />
                         </span>
                 );
@@ -76,11 +42,11 @@ class SecurityCode extends Component {
                 return retrievedCode.code.Error ? (
                     <span className="text-danger">
                         <p className="security-code-danger"><i
-                            className="fa fa-exclamation-triangle security-code-danger"> </i></p>
+                            className="fa fa-exclamation-triangle"> </i></p>
                         <p className="security-code-not-found">Not Found</p>
                         </span>
                 ) : (
-                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
+                    <div className="form-group security-code-retrieved pull-right text-primary">
                         <label>{retrievedCode.code.SecurityCode || ''}</label>
                     </div>
                 );
@@ -128,27 +94,15 @@ class SecurityCode extends Component {
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
 
-        // const style = {
-        //     height: 100,
-        //     width: 1100,
-        //     margin: 8,
-        //     textAlign: 'center',
-        //     backgroundColor: '#393d42',
-        //     color: '#ffffff',
-        //     float: 'right',
-        //     'border-radius': 5
-        // };
-
         const style = {
             height: 70,
             width: 180,
             marginLeft: 30,
-            marginTop: 10,
+            marginTop: 19,
             textAlign: 'center',
             backgroundColor: '#393d42',
             color: '#ffffff',
             float: 'left',
-            paddingRight: 100,
             'border-radius': 5,
         };
 
@@ -160,7 +114,7 @@ class SecurityCode extends Component {
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-sm-3 col-color-acc">
+                        <div className="form-group col-sm-3 account-number">
                             {renderAccountField()}
                         </div>
 
@@ -168,7 +122,7 @@ class SecurityCode extends Component {
                             {renderButton(this.props)}
                         </div>
 
-                        <Paper className="pull-left" style={style} zDepth={2} rounded={true}>
+                        <Paper style={style} zDepth={2} rounded={true}>
                             {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
                         </Paper>
 
