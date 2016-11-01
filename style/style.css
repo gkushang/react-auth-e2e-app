@@ -54,6 +54,7 @@ body {
 
 .user-info-panel {
     margin-top: 8px;
+    letter-spacing: 0.2px;
 }
 
 .user-info-title {
@@ -65,10 +66,17 @@ body {
     font-size: 18px;
 }
 
+.user-fetching-circular {
+    margin-top: 290px;
+    font-size: 14px;
+}
+
+
 .user-info-action {
     line-height: 600px;
     color: lightgray;
     font-size: 26px;
+    letter-spacing: 1px;
 }
 
 .security-code-error {

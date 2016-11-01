@@ -5,6 +5,11 @@ import securityCode from '../../service/securityCode';
 export function selectChallenge(challenge) {
     return (dispatch) => {
 
+        dispatch({
+            type: Types.USER_FETCH_REQUEST,
+            isFetchingUser: true
+        });
+
         const updateUser = (user) => {
             user.data.challenge = challenge;
             console.log('User: ', user);
@@ -29,14 +34,12 @@ export function selectChallenge(challenge) {
                 })
             }
 
-            console.log('User: ', user);
-
             return user.data;
         };
 
         const dispatchAction = (user) => {
             dispatch({
-                type: Types.CHALLENGE_SELECTED,
+                type: Types.USER_FETCHED,
                 user
             })
         };
