@@ -26,7 +26,7 @@ class SecurityCode extends Component {
 
     render() {
 
-        const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
+        const { handleSubmit } = this.props;
 
         const renderCode = (retrievedCode, isLoading) => {
 

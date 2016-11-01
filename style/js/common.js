@@ -4,7 +4,6 @@ $(function() {
 
         var top = $(document).scrollTop();
 
-        console.log('top == ', top);
         if (top > 30) {
             $('.navbar').removeClass('navbar-default');
             $('.navbar').addClass('navbar-inverse');
@@ -37,4 +36,16 @@ $('.security-list-group-item').on('click', function(e) {
     $('.security-list-group').find('.active').removeClass('active');
     $this.addClass('active');
 });
+
+$(function() {
+    $(document).on('click', '.alert-close', function() {
+        $(this).parent().toggle();
+    })
+});
+
+$('a').click(function() {
+    $(this).parent().children().removeClass("active");
+    $(this).addClass("active");
+});
+
 
