@@ -14,7 +14,7 @@ class UserInformation extends Component {
             backgroundColor: '#393d42',
             color: '#ffffff',
             borderRadius: 5,
-            width: 985,
+            width: "70%",
             height: 580,
             refresh: {
                 display: 'inline-block',
@@ -75,60 +75,60 @@ class UserInformation extends Component {
                     <div className="col-sm-12 user-info-panel">
                         <div className="row">
 
-                            <div className="col-xs-8 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {info.user.emailAddress}</p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.accountNumber}</p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i className="fa fa-user-plus"> </i> {info.user.accountType}</p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-desktop" aria-hidden="true"> </i> {info.stage} </p>
                             </div>
 
-                            <div className="col-xs-8 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i className="fa fa-user"> </i> {info.user.firstName}</p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.lastName} </p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-left"><i className="fa fa-home"> </i> {info.user.homeAddress1} </p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-map-marker"> </i> {info.user.homeCity} </p>
                             </div>
 
-                            <div className="col-xs-8 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i className="fa fa-mobile"> </i> {info.user.mobilePhone} </p>
                             </div>
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-phone"> </i> {info.user.homePhoneNumber} </p>
                             </div>
 
-                            <div className="col-xs-8 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i className="fa fa-question-circle"> </i> {info.user.securityAnswer1} </p>
                             </div>
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {info.user.securityAnswer1} </p>
                             </div>
 
-                            <div className="col-xs-8 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i className="fa fa-question-circle"> </i> {info.user.securityAnswer2} </p>
                             </div>
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {info.user.securityAnswer2} </p>
                             </div>
 
-                            <div className="col-xs-8 col-sm-6 ">
+                            <div className="col-xs-12 col-sm-6 ">
                                 {info.visa ?
                                     <p className="user-info pull-left">
                                         <i className="fa fa-cc-visa">
@@ -141,7 +141,7 @@ class UserInformation extends Component {
                                     </p>}
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 {info.master ?
                                     <p className="user-info pull-right">
                                         <i className="fa fa-cc-mastercard">
@@ -154,19 +154,19 @@ class UserInformation extends Component {
                                     </p>}
                             </div>
 
-                            <div className="col-xs-8 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 {info.amex ? <p className="user-info pull-left"><i className="fa fa-cc-amex"> </i> {info.amex.cardNumber} </p> : <p> </p>}
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 {info.discover ? <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> {info.discover.cardNumber} </p> : <p> </p>}
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i className="fa fa-hourglass-half"> </i> {info.available} left</p>
                             </div>
 
-                            <div className="col-xs-4 col-sm-6">
+                            <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i className="fa fa-list-ul" aria-hidden="true"> </i> {challenges} </p>
                             </div>
 

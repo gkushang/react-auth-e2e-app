@@ -29,8 +29,8 @@ class SecurityCodeList extends Component {
 
     render() {
         return (
-            <div className="container-fluid security-code-panel">
-                <List className="col-md-2 security-list-group">
+            <div className="container-fluid ">
+                <List className="col-md-2  security-list-group">
                     {this.renderList()}
                 </List>
                 <SecurityCode />

@@ -63,7 +63,7 @@ class SecurityCode extends Component {
                     textAlign: 'left', verticalAlign: 'middle', position: 'relative', fontFamily: "'Montserrat', sans-serif"}}
                 primary={true}
                 type="submit"
-                style={{margin: 2, display: 'inline-block'}}
+                style={{margin: 2, marginLeft: 20, display: 'inline-block'}}
                 buttonStyle={{width: 165}}
                 onTouchTap={this.context.submit}
             />
@@ -96,36 +96,51 @@ class SecurityCode extends Component {
         const style = {
             height: 70,
             width: 190,
-            marginLeft: 38,
+            marginLeft: 0,
             marginTop: 19,
             textAlign: 'center',
-            backgroundColor: '#393d42',
             color: '#ffffff',
             float: 'left',
             'border-radius': 5,
         };
 
+        const paperStyle = {
+            'margin-left': 60,
+            float: 'left',
+            textAlign: 'center',
+            backgroundColor: 'transparent',
+            color: '#ffffff',
+            borderRadius: 5,
+            width: "70%",
+            height: 100,
+            };
+
         return (
-            <div className="security-code-panel common">
+            <div className="security-code-panel row common">
+                <Paper style={paperStyle} zDepth={0} rounded={true}>
+
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-sm-3 common">
+                        <div className="form-group col-lg-pull-3 common pull-left blue">
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-sm-3">
+                        <div className="form-group col-lg-3 pink">
                             {renderAccountField()}
                         </div>
 
-                        <div className="form-group col-sm-2 pull-left security-code-btn">
+                        <div className="form-group col-lg-2 pull-left security-code-btn blue">
                             {renderButton(this.props)}
                         </div>
 
-                        <Paper style={style} zDepth={1} rounded={true}>
+                        <div className="form-group col-lg-3 pink pull-right">
+                        <Paper style={style} zDepth={1} rounded={true} className="">
                             {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
                         </Paper>
+                            </div>
 
                     </form>
+                    </Paper>
             </div>
         );
     }

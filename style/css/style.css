@@ -4,7 +4,6 @@ html {
     background-image: url("https://bootswatch.com/assets/img/bg.jpg");
 }
 
-
 body {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 48px;
@@ -14,10 +13,6 @@ body {
     background-color: transparent !important;
     border-color: #2b2e32 !important;
     color: lightblue !important;
-}
-
-.navbar-nav:hover {
-    color: blue !important;
 }
 
 .bg-font {
@@ -63,6 +58,8 @@ body {
 .user-info-panel {
     margin-top: 8px;
     letter-spacing: 0.2px;
+    width: 70%;
+    float: left;
 }
 
 .user-info-title {
@@ -198,10 +195,10 @@ span.inline {
     color: #7f7fff !important;
 }
 
-/*.orange {*/
-    /*background-color: orangered;*/
+/*.blue {*/
+    /*background-color: blue;*/
 /*}*/
 
 /*.pink {*/
-    /*background-color: hotpink;*/
+    /*background-color: pink;*/
 /*}*/
