@@ -27,7 +27,7 @@ class ChallengesList extends Component {
 
     render() {
         return (
-                <div className="container-fluid">
+                <div className="container-fluid ">
                     <List className="col-md-2 challenge-list-group">
                         {this.renderList()}
                     </List>

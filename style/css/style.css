@@ -140,6 +140,10 @@ span.inline {
     float: left;
 }
 
+.security-code-container {
+    margin-top: 50px;
+}
+
 .security-code-panel {
     margin-left: 300px;
     vertical-align: middle;
