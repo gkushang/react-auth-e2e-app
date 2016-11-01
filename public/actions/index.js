@@ -46,7 +46,8 @@ export function selectChallenge(challenge) {
 
         return popUser(challenge)
             .then(updateUser)
-            .then(dispatchAction);
+            .then(dispatchAction)
+            .catch(dispatchAction)
     }
 }
 
@@ -60,6 +61,20 @@ export function selectSecurityCodeChallenge(securityCodeChallenge) {
 export function fetchSecurityCode(challenge, params) {
     console.log('Fetch Security Code:  ', challenge, params);
 
+    const dispatchAction = (code) => {
+
+        console.log('Fetch Security Code ERROR:  ', code);
+
+        code = {
+            Error: code
+        };
+
+        dispatch({
+            type: Types.SECURITY_CODE_RECEIVED,
+            code: code.data ? code.data : code
+        })
+    };
+
     return (dispatch) => {
 
         dispatch({
@@ -67,15 +82,9 @@ export function fetchSecurityCode(challenge, params) {
             isLoading: true
         });
 
-        securityCode({
-            challenge,
-            params
-        }).then(function(code) {
-            dispatch({
-                type: Types.SECURITY_CODE_RECEIVED,
-                code: code.data
-            })
-        })
+        securityCode({challenge, params})
+            .then(dispatchAction)
+            .catch(dispatchAction)
 
     }
 }

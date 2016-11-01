@@ -7,10 +7,11 @@ export default (field) => {
             <TextField
                 floatingLabelText={field.placeholder}
                 errorText = {field.meta.touched && field.meta.error}
+                style={{width: "70%", float: "left", textAlign: "center"}}
                 className="common small-font"
-                errorStyle={{"font-size": "10px"}}
-                hintStyle={{"font-size": "16px"}}
-                floatingLabelStyle={{"font-size": "16px"}}
+                errorStyle={{"font-size": "10px", float: "left"}}
+                hintStyle={{"font-size": "10px"}}
+                floatingLabelStyle={{"font-size": "15px"}}
                 hintText={field.hintText}
                 {...field.input}
             />

@@ -126,7 +126,6 @@ span.inline {
 
 .security-code-btn {
     padding-top: 35px;
-    margin-left: 15px;
 }
 
 .account-number{
@@ -147,6 +146,7 @@ span.inline {
 .security-code-panel {
     margin-left: 300px;
     vertical-align: middle;
+    margin-top: 25px;
 }
 
 .sec-code {
@@ -168,7 +168,7 @@ span.inline {
 }
 
 .loading {
-    padding-top: 15px;
+    margin-top: 15px;
 }
 
 .security-code-error-text {
@@ -185,12 +185,13 @@ span.inline {
 }
 
 .security-code-retrieved {
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     font-size: 30px;
 
     width: 100%;
 
     padding-top: 15px;
+    text-align: center;
     border-radius:5px;
 
 }

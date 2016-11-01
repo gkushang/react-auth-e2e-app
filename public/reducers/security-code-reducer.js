@@ -4,7 +4,7 @@ export default function(state = {
     type: 'Sms',
     key: 'sms'}, action) {
 
-    console.log('action in sec code reducer: ', action);
+    console.log('action in sec codeeeee reducer: ', action);
 
   switch (action.type) {
 

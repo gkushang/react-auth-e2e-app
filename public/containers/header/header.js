@@ -24,9 +24,10 @@ export default function() {
 
                     <div id="navbar" className="navbar-collapse collapse">
                         <ul className="nav navbar-nav navbar-right">
+
                             <li>
-                                <a href="https://github.paypal.com/kugajjar/authuserserv/blob/master/readme.md" target="_blank">
-                                    API Docs
+                                <a href="http://cukes-3821.ccg21.dev.paypalcorp.com/projects/authnodeweb/" target="_blank">
+                                    Cucumber Docs
                                 </a>
                             </li>
 
@@ -36,9 +37,10 @@ export default function() {
                                 </a>
                             </li>
 
+
                             <li>
-                                <a href="http://cukes-3821.ccg21.dev.paypalcorp.com/projects/authnodeweb/" target="_blank">
-                                    Cucumber Docs
+                                <a href="https://github.paypal.com/kugajjar/authuserserv/blob/master/readme.md" target="_blank">
+                                    API
                                 </a>
                             </li>
 

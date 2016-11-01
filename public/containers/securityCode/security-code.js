@@ -30,6 +30,8 @@ class SecurityCode extends Component {
 
         const renderCode = (retrievedCode, isLoading) => {
 
+            console.log('code ere ', retrievedCode);
+
             if(isLoading) {
                 return (
                         <span className="loading text-center">
@@ -37,6 +39,7 @@ class SecurityCode extends Component {
                         </span>
                 );
             }
+
 
             if(retrievedCode.code) {
                 return retrievedCode.code.Error ? (
@@ -58,13 +61,10 @@ class SecurityCode extends Component {
         const renderButton = () => (
             <RaisedButton
                 label={<span> <i className="fa fa-paper-plane" aria-hidden="true"> </i> Security Code </span>}
-                className="raised-button"
-                labelStyle={{'font-size' : 13, color: 'lightgray', display: 'block',
-                    textAlign: 'left', verticalAlign: 'middle', position: 'relative', fontFamily: "'Montserrat', sans-serif"}}
+                className="raised-button pull-left"
+                labelStyle={{'font-size' : 13, color: 'lightgray',  fontFamily: "'Montserrat', sans-serif"}}
                 primary={true}
                 type="submit"
-                style={{margin: 2, marginLeft: 20, display: 'inline-block'}}
-                buttonStyle={{width: 165}}
                 onTouchTap={this.context.submit}
             />
         );
@@ -83,7 +83,7 @@ class SecurityCode extends Component {
         const renderAccountField = () => (
             <Field
                 name="accountNumber"
-                placeholder="Account Number or Email"
+                placeholder="Account # or Email"
                 type="tel"
                 component={Input}
             />
@@ -95,9 +95,8 @@ class SecurityCode extends Component {
 
         const style = {
             height: 70,
-            width: 190,
-            marginLeft: 0,
-            marginTop: 19,
+            width: "100%",
+            marginTop: 15,
             textAlign: 'center',
             color: '#ffffff',
             float: 'left',
@@ -111,8 +110,7 @@ class SecurityCode extends Component {
             backgroundColor: 'transparent',
             color: '#ffffff',
             borderRadius: 5,
-            width: "70%",
-            height: 100,
+            width: "75%"
             };
 
         return (
@@ -121,19 +119,19 @@ class SecurityCode extends Component {
 
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-lg-pull-3 common pull-left blue">
+                        <div className="form-group col-lg-3 col-md-6 pull-left common blue">
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-lg-3 pink">
+                        <div className="form-group col-lg-4 col-md-6 pink">
                             {renderAccountField()}
                         </div>
 
-                        <div className="form-group col-lg-2 pull-left security-code-btn blue">
-                            {renderButton(this.props)}
+                        <div className="form-group col-lg-3 col-md-6 security-code-btn blue">
+                            {renderButton()}
                         </div>
 
-                        <div className="form-group col-lg-3 pink pull-right">
+                        <div className="form-group col-lg-2 col-md-6 pink pull-right">
                         <Paper style={style} zDepth={1} rounded={true} className="">
                             {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
                         </Paper>
