@@ -29,9 +29,9 @@ class SecurityCode extends Component {
 
         const {handleSubmit} = this.props;
 
-        const renderCode = (retrievedCode, isLoading) => {
+        const renderCode = (retrievedCode, isFetchingCode) => {
 
-            if (isLoading) {
+            if (isFetchingCode) {
                 return (
                     <span className="loading text-center">
                             <CircularProgress />
@@ -109,7 +109,7 @@ class SecurityCode extends Component {
 
                         <div className="form-group col-lg-2 col-md-6 pink pull-right">
                             <Paper style={Styles.securityCodePaper} zDepth={2} rounded={true}>
-                                {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
+                                {renderCode(this.props.securityCodeFetched, this.props.isFetchingCode)}
                             </Paper>
                         </div>
 
@@ -125,7 +125,7 @@ function mapStateToProps(state) {
         securityCodeChallenge: state.securityCodeChallenge,
         securityCodeFetched: state.securityCodeFetched,
         user: state.user,
-        isLoading: state.isLoading
+        isFetchingCode: state.isFetchingCode
     }
 }
 

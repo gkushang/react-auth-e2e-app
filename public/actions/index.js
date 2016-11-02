@@ -53,7 +53,7 @@ export const fetchSecurityCode = (challenge, params) => {
 
         dispatch({
             type: Types.SECURITY_CODE_REQUEST_TO_FETCH,
-            isLoading: true
+            isFetchingCode: true
         });
 
         const dispatchAction = (code) => {
