@@ -1,34 +1,18 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import Paper from 'material-ui/Paper';
-import CircularProgress from 'material-ui/CircularProgress';
-import {bindActionCreators} from 'redux';
-import {createNewUser} from '../../actions/index';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import Paper from "material-ui/Paper";
+import CircularProgress from "material-ui/CircularProgress";
+import {bindActionCreators} from "redux";
+import {createUser} from "../../actions/index";
+import Styles from "Styles";
 
 class UserInformation extends Component {
 
     render() {
 
-        const style = {
-            'margin-left': 60,
-            float: 'left',
-            textAlign: 'center',
-            backgroundColor: '#393d42',
-            color: '#ffffff',
-            borderRadius: 5,
-            width: "70%",
-            height: 580,
-            refresh: {
-                display: 'inline-block',
-                position: 'relative',
-            }
-        };
-
         const info = this.props.user;
 
-        console.log('this.props.user = ', this.props.user);
-
-        if( !this.props.isFetchingUser ) {
+        if (!this.props.isFetchingUser) {
 
             if (!info) {
                 return (
@@ -54,8 +38,8 @@ class UserInformation extends Component {
                                 <ins>
                                     <a
                                         className="text-danger creating-user-link"
-                                        onClick={() => this.props.createNewUser(info.challenge)}
-                                        target="_blank" >
+                                        onClick={() => this.props.createUser(info.challenge)}
+                                        target="_blank">
                                         Create a new user
                                     </a>
                                 </ins>
@@ -70,102 +54,120 @@ class UserInformation extends Component {
 
             var challenges = info.challenge.key;
 
-            if(info.challenges ) {
+            if (info.challenges) {
                 challenges = info.challenges.join(', ');
             }
 
             return (
                 <div>
                     <div className="panel-heading text-primary">
-                        <p className="text-center user-info-title"><i className="fa fa-paypal"> </i> {info.challenge.type}</p>
+                        <p className="text-center user-info-title"><i
+                            className="fa fa-paypal"> </i> {info.challenge.type}</p>
                     </div>
 
                     <div className="col-sm-12 user-info-panel">
                         <div className="row">
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-left"><i className="fa fa-envelope"> </i> {info.user.emailAddress}</p>
+                                <p className="user-info pull-left"><i
+                                    className="fa fa-envelope"> </i> {info.user.emailAddress}</p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.accountNumber}</p>
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-user-secret"> </i> {info.user.accountNumber}</p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i className="fa fa-user-plus"> </i> {info.user.accountType}</p>
+                                <p className="user-info  pull-left"><i
+                                    className="fa fa-user-plus"> </i> {info.user.accountType}</p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-desktop" aria-hidden="true"> </i> {info.stage} </p>
+                                <p className="user-info pull-right"><i className="fa fa-desktop"> </i> {info.stage} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i className="fa fa-user"> </i> {info.user.firstName}</p>
+                                <p className="user-info  pull-left"><i
+                                    className="fa fa-user"> </i> {info.user.firstName}</p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-user-secret"> </i> {info.user.lastName} </p>
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-user-secret"> </i> {info.user.lastName} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-left"><i className="fa fa-home"> </i> {info.user.homeAddress1} </p>
+                                <p className="user-info pull-left"><i
+                                    className="fa fa-home"> </i> {info.user.homeAddress1} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-map-marker"> </i> {info.user.homeCity} </p>
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-map-marker"> </i> {info.user.homeCity} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i className="fa fa-mobile"> </i> {info.user.mobilePhone} </p>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-phone"> </i> {info.user.homePhoneNumber} </p>
+                                <p className="user-info  pull-left"><i
+                                    className="fa fa-mobile"> </i> {info.user.mobilePhone} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i className="fa fa-question-circle"> </i> {info.user.securityAnswer1} </p>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {info.user.securityAnswer1} </p>
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-phone"> </i> {info.user.homePhoneNumber} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i className="fa fa-question-circle"> </i> {info.user.securityAnswer2} </p>
+                                <p className="user-info  pull-left"><i
+                                    className="fa fa-question-circle"> </i> {info.user.securityAnswer1} </p>
                             </div>
+
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-check-circle"> </i> {info.user.securityAnswer2} </p>
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-check-circle"> </i> {info.user.securityAnswer1} </p>
+                            </div>
+
+                            <div className="col-xs-12 col-sm-6">
+                                <p className="user-info  pull-left"><i
+                                    className="fa fa-question-circle"> </i> {info.user.securityAnswer2} </p>
+                            </div>
+
+                            <div className="col-xs-12 col-sm-6">
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-check-circle"> </i> {info.user.securityAnswer2} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6 ">
-                                <p className="user-info pull-left">
-                                    <i className="fa fa-cc-visa">
-                                    </i> {info.visa ? info.visa.cardNumber : ''}
+                                <p className="user-info pull-left"><i
+                                    className="fa fa-cc-visa"> </i> {info.Visa ? info.Visa.cardNumber : ''}</p>
+                            </div>
+
+                            <div className="col-xs-12 col-sm-6">
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-cc-mastercard"> </i> {info.Master ? info.Master.cardNumber : ''}
                                 </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right">
-                                    <i className="fa fa-cc-mastercard">
-                                    </i> {info.master ? info.master.cardNumber : ''}
+                                <p className="user-info pull-left"><i
+                                    className="fa fa-cc-amex"> </i> {info.Amex ? info.Amex.cardNumber : ''} </p>
+                            </div>
+
+                            <div className="col-xs-12 col-sm-6">
+                                <p className="user-info pull-right"><i
+                                    className="fa fa-cc-discover"> </i> {info.Discover ? info.Discover.cardNumber : ''}
                                 </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-left"><i className="fa fa-cc-amex"> </i> {info.amex ? info.amex.cardNumber : ''} </p>
+                                <p className="user-info  pull-left"><i
+                                    className="fa fa-hourglass-half"> </i> {info.available} left</p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> {info.discover ? info.discover.cardNumber : ''} </p>
+                                <p className="user-info pull-right"><i className="fa fa-list-ul"
+                                                                       aria-hidden="true"> </i> {challenges} </p>
                             </div>
-
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i className="fa fa-hourglass-half"> </i> {info.available} left</p>
-                            </div>
-
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i className="fa fa-list-ul" aria-hidden="true"> </i> {challenges} </p>
-                            </div>
-
 
                         </div>
                     </div>
@@ -174,11 +176,10 @@ class UserInformation extends Component {
         };
 
         return (
-
-            <Paper className="container-fluid common" style={style} zDepth={1} rounded={true}>
-                { this.props.isFetchingUser ? <CircularProgress className="user-fetching-circular" size={60} thickness={5} /> : renderInfo(info) }
+            <Paper className="container-fluid common" style={Styles.userInfo} zDepth={1} rounded={true}>
+                { this.props.isFetchingUser ?
+                    <CircularProgress className="user-fetching-circular" size={60} thickness={5}/> : renderInfo(info) }
             </Paper>
-
         );
     }
 }
@@ -192,8 +193,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ createNewUser }, dispatch);
+    return bindActionCreators({createUser}, dispatch);
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserInformation)

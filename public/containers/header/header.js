@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function() {
     return (
@@ -8,15 +8,18 @@ export default function() {
 
                     <div className="navbar-inner">
 
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"> </span>
                             <span className="icon-bar"> </span>
                             <span className="icon-bar"> </span>
                         </button>
 
-                        <a className="navbar-brand navbar-default" href="https://github.paypal.com/Identity-R/authnodeweb" target="_blank">
-                            <i className="fa fa-github">  </i>
+                        <a className="navbar-brand navbar-default"
+                           href="https://github.paypal.com/Identity-R/authnodeweb/tree/develop/tests/acceptance"
+                           target="_blank">
+                            <i className="fa fa-github"> </i>
                             E2E authnodeweb
                         </a>
 
@@ -26,7 +29,8 @@ export default function() {
                         <ul className="nav navbar-nav navbar-right">
 
                             <li>
-                                <a href="http://cukes-3821.ccg21.dev.paypalcorp.com/projects/authnodeweb/" target="_blank">
+                                <a href="http://cukes-3821.ccg21.dev.paypalcorp.com/projects/authnodeweb/"
+                                   target="_blank">
                                     Cucumber Docs
                                 </a>
                             </li>
@@ -39,7 +43,7 @@ export default function() {
 
 
                             <li>
-                                <a href="https://github.paypal.com/kugajjar/authuserserv/blob/master/readme.md" target="_blank">
+                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com" target="_blank">
                                     API
                                 </a>
                             </li>

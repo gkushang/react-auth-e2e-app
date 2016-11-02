@@ -1,0 +1,42 @@
+{
+
+  "listItem": {
+    "fontSize": 15,
+    "color": "#9E9E9E",
+    "letterSpacing": 0,
+    "fontFamily": "\"Montserrat\", sans-serif"
+  },
+
+  "userInfo": {
+    "marginLeft": 60,
+    "float": "left",
+    "textAlign": "center",
+    "backgroundColor": "#393d42",
+    "color": "#ffffff",
+    "borderRadius": 5,
+    "width": "72%",
+    "height": 580
+  },
+
+  "securityCodePanelPaper": {
+    "marginLeft": 60,
+    "float": "left",
+    "textAlign": "center",
+    "backgroundColor": "transparent",
+    "color": "#ffffff",
+    "borderRadius": 5,
+    "width": "75%"
+  },
+
+  "securityCodePaper": {
+    "height": 70,
+    "width": "100%",
+    "marginTop": 15,
+    "textAlign": "center",
+    "color": "#ffffff",
+    "float": "left",
+    "borderRadius": 5,
+    "backgroundColor": "transparent"
+  }
+
+}

@@ -28,6 +28,6 @@ module.exports = {
   },
   externals: {
     'Config': JSON.stringify(require('./config/config.json')),
-    'Styles': JSON.stringify(require('./style/css/commonStyles.json'))
+    'Styles': JSON.stringify(require('./style/css/materialStyles.json'))
   }
 };

@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {selectSecurityCodeChallenge} from '../../actions/index';
-import {bindActionCreators} from 'redux';
-import SecurityCode from './security-code';
-import {List, ListItem} from 'material-ui/List';
-import Styles from 'Styles';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {selectSecurityCodeChallenge} from "../../actions/index";
+import {bindActionCreators} from "redux";
+import SecurityCode from "./security-code";
+import {List, ListItem} from "material-ui/List";
+import Styles from "Styles";
 
 
 class SecurityCodeList extends Component {
@@ -30,7 +30,7 @@ class SecurityCodeList extends Component {
     render() {
         return (
             <div className="container-fluid security-code-container">
-                <List className="col-md-2  security-list-group">
+                <List className="col-md-2 security-list-group">
                     {this.renderList()}
                 </List>
                 <SecurityCode />
@@ -46,7 +46,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ selectSecurityCodeChallenge }, dispatch);
+    return bindActionCreators({selectSecurityCodeChallenge}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecurityCodeList)

@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {selectChallenge} from '../../actions/index';
-import {bindActionCreators} from 'redux';
-import UserInformation from './user-information';
-import {List, ListItem} from 'material-ui/List';
-import Styles from 'Styles'
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {popUser} from "../../actions/index";
+import {bindActionCreators} from "redux";
+import UserInformation from "./user-information";
+import {List, ListItem} from "material-ui/List";
+import Styles from "Styles";
 
 class ChallengesList extends Component {
 
@@ -15,7 +15,7 @@ class ChallengesList extends Component {
                     <ListItem
                         href="#"
                         key={challenge.type}
-                        onClick={() => this.props.selectChallenge(challenge)}
+                        onClick={() => this.props.popUser(challenge)}
                         style={Styles.listItem}
                         className="list-group-item challenge-list-group-item">
                         {challenge.type}
@@ -27,12 +27,12 @@ class ChallengesList extends Component {
 
     render() {
         return (
-                <div className="container-fluid ">
-                    <List className="col-md-2 challenge-list-group">
-                        {this.renderList()}
-                    </List>
-                    <UserInformation />
-                </div>
+            <div className="container-fluid ">
+                <List className="col-md-2 challenge-list-group">
+                    {this.renderList()}
+                </List>
+                <UserInformation />
+            </div>
         );
     }
 }
@@ -44,7 +44,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ selectChallenge }, dispatch);
+    return bindActionCreators({popUser}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChallengesList)
