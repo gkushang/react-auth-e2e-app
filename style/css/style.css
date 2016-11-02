@@ -15,10 +15,6 @@ body {
     color: lightblue !important;
 }
 
-.bg-font {
-    font-size: 22px !important;
-}
-
 #wrapper {
     position: absolute;
     width: 100%;
@@ -164,6 +160,7 @@ span.inline {
 .security-code-danger{
     font-size: 38px;
 }
+
 .security-code-not-found {
     font-size: 13px;
     height: 25px;
@@ -178,36 +175,21 @@ span.inline {
 .security-code-error-text {
     font-size: 13px;
     vertical-align: middle;
-
     text-align: center;
-
     width: 100%;
-
     height: 85px;
-
     background-color: #2b2e32 !important;
 }
 
 .security-code-retrieved {
     letter-spacing: 4px;
     font-size: 30px;
-
     width: 100%;
-
     padding-top: 15px;
     text-align: center;
     border-radius:5px;
-
 }
 
 .creating-user-link:hover {
     color: #7f7fff !important;
 }
-
-/*.blue {*/
-    /*background-color: blue;*/
-/*}*/
-
-/*.pink {*/
-    /*background-color: pink;*/
-/*}*/
