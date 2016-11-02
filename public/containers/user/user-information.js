@@ -137,37 +137,25 @@ class UserInformation extends Component {
                             </div>
 
                             <div className="col-xs-12 col-sm-6 ">
-                                {info.visa ?
-                                    <p className="user-info pull-left">
-                                        <i className="fa fa-cc-visa">
-                                        </i> {info.visa.cardNumber}
-                                    </p> :
-                                    <p className="user-info pull-left">
-                                        <i className="fa fa-key">
-                                        </i> {info.user.password}
-
-                                    </p>}
+                                <p className="user-info pull-left">
+                                    <i className="fa fa-cc-visa">
+                                    </i> {info.visa ? info.visa.cardNumber : ''}
+                                </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                {info.master ?
-                                    <p className="user-info pull-right">
-                                        <i className="fa fa-cc-mastercard">
-                                        </i> {info.master.cardNumber}
-                                    </p> :
-                                    <p className="user-info pull-right">
-                                        <i className="fa fa-hand-o-right">
-                                        </i> {info.status}
-
-                                    </p>}
+                                <p className="user-info pull-right">
+                                    <i className="fa fa-cc-mastercard">
+                                    </i> {info.master ? info.master.cardNumber : ''}
+                                </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                {info.amex ? <p className="user-info pull-left"><i className="fa fa-cc-amex"> </i> {info.amex.cardNumber} </p> : <p> </p>}
+                                <p className="user-info pull-left"><i className="fa fa-cc-amex"> </i> {info.amex ? info.amex.cardNumber : ''} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
-                                {info.discover ? <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> {info.discover.cardNumber} </p> : <p> </p>}
+                                <p className="user-info pull-right"><i className="fa fa-cc-discover"> </i> {info.discover ? info.discover.cardNumber : ''} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">

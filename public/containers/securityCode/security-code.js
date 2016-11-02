@@ -101,6 +101,7 @@ class SecurityCode extends Component {
             color: '#ffffff',
             float: 'left',
             'border-radius': 5,
+            backgroundColor: 'transparent'
         };
 
         const paperStyle = {
@@ -132,7 +133,7 @@ class SecurityCode extends Component {
                         </div>
 
                         <div className="form-group col-lg-2 col-md-6 pink pull-right">
-                        <Paper style={style} zDepth={1} rounded={true} className="">
+                        <Paper style={style} zDepth={2} rounded={true} className="">
                             {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
                         </Paper>
                             </div>
