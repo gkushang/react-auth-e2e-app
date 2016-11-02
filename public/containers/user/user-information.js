@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Paper from 'material-ui/Paper';
 import CircularProgress from 'material-ui/CircularProgress';
+import {bindActionCreators} from 'redux';
+import {createNewUser} from '../../actions/index';
 
 class UserInformation extends Component {
 
@@ -24,7 +26,7 @@ class UserInformation extends Component {
 
         const info = this.props.user;
 
-        console.log('is fetching = ', this.props.isFetchingUser);
+        console.log('this.props.user = ', this.props.user);
 
         if( !this.props.isFetchingUser ) {
 
@@ -42,7 +44,6 @@ class UserInformation extends Component {
                     </div>
                 );
             } else if (info.status && info.status === 'Generating') {
-                const createUserUrl = "http://authserv-8375.ccg21.dev.paypalcorp.com/msmaster/users/create?challengeType=" + info.challenge.key;
                 return (
                     <div className="row">
                         <div className="container-fluid user-info-panel panel-color text-center text-danger">
@@ -51,7 +52,10 @@ class UserInformation extends Component {
                             </h4>
                             <small className="text-center">
                                 <ins>
-                                    <a className="text-danger creating-user-link" href={createUserUrl} target="_blank">
+                                    <a
+                                        className="text-danger creating-user-link"
+                                        onClick={() => this.props.createNewUser(info.challenge)}
+                                        target="_blank" >
                                         Create a new user
                                     </a>
                                 </ins>
@@ -64,7 +68,11 @@ class UserInformation extends Component {
 
         const renderInfo = (info) => {
 
-            const challenges = info.challenges.join(', ');
+            var challenges = info.challenge.key;
+
+            if(info.challenges ) {
+                challenges = info.challenges.join(', ');
+            }
 
             return (
                 <div>
@@ -187,7 +195,6 @@ class UserInformation extends Component {
     }
 }
 
-// { this.props.isFetchingUser ? <CircularProgress /> : renderInfo(info) }
 function mapStateToProps(state) {
     return {
         user: state.user,
@@ -196,4 +203,9 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(UserInformation)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ createNewUser }, dispatch);
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserInformation)

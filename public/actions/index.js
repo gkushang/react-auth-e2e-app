@@ -1,5 +1,6 @@
 import Types from './types';
 import popUser from '../../service/popUser';
+import createUser from '../../service/createUser';
 import securityCode from '../../service/securityCode';
 
 export function selectChallenge(challenge) {
@@ -81,6 +82,58 @@ export function fetchSecurityCode(challenge, params) {
         securityCode({challenge, params})
             .then(dispatchAction)
             .catch(dispatchAction)
+    }
+}
 
+export function createNewUser(challenge) {
+    return (dispatch) => {
+
+        dispatch({
+            type: Types.USER_FETCH_REQUEST,
+            isFetchingUser: true
+        });
+
+        const updateUser = (user) => {
+            console.log('user created: ', user);
+
+            user.data.challenge = challenge;
+
+            if(user.data.creditcard) {
+                user.data.creditcard.map(function(creditCard) {
+                    if(creditCard.cardType === 'Discover') {
+                        user.data.discover = creditCard
+                    }
+
+                    if(creditCard.cardType === 'Visa') {
+                        user.data.visa = creditCard
+                    }
+
+                    if(creditCard.cardType === 'Master') {
+                        user.data.master = creditCard
+                    }
+
+                    if(creditCard.cardType === 'Amex') {
+                        user.data.amex = creditCard
+                    }
+
+                })
+            }
+
+            console.log('user.data created: ', user.data);
+
+            return user.data;
+        };
+
+        const dispatchAction = (user) => {
+            dispatch({
+                type: Types.USER_FETCHED,
+                user
+            })
+        };
+
+        return createUser(challenge)
+            .then(updateUser)
+            .then(dispatchAction)
+            .catch(dispatchAction)
     }
 }
