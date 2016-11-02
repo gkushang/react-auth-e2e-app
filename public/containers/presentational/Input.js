@@ -1,21 +1,19 @@
-import React from 'react';
-import TextField from 'material-ui/TextField';
+import React from "react";
+import TextField from "material-ui/TextField";
 
 export default (field) => {
 
     return (
-            <TextField
-                floatingLabelText={field.placeholder}
-                errorText = {field.meta.touched && field.meta.error}
-                className="security-field"
-                errorStyle={{"font-size": "10px"}}
-                hintText={field.hintText}
-                style={{
-                    "paddingBottom": "5px",
-                    "float" :"top",
-                    "fontSize": "10px"
-                }}
-                {...field.input}
-            />
-        );
+        <TextField
+            floatingLabelText={field.placeholder}
+            errorText={field.meta.touched && field.meta.error}
+            style={{width: "70%", float: "left", textAlign: "center"}}
+            className="common small-font"
+            errorStyle={{fontSize: "10px", float: "left"}}
+            hintStyle={{fontSize: "10px"}}
+            floatingLabelStyle={{fontSize: "15px"}}
+            hintText={field.hintText}
+            {...field.input}
+        />
+    );
 };

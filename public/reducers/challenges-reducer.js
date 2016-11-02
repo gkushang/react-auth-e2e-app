@@ -14,11 +14,11 @@ export default function() {
                 key: 'twoWaySms'
             },
             {
-                type: 'Ivr',
+                type: 'IVR',
                 key: 'ivr',
             },
             {
-                type: 'Pin Less Ivr',
+                type: 'Pin Less IVR',
                 key: 'pinLessIvr'
             },
             {

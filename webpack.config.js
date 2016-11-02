@@ -27,6 +27,7 @@ module.exports = {
     changeOrigin: true
   },
   externals: {
-    'Config': JSON.stringify(require('./config/config.json'))
+    'Config': JSON.stringify(require('./config/config.json')),
+    'Styles': JSON.stringify(require('./style/css/materialStyles.json'))
   }
 };

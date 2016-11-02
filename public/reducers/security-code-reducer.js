@@ -1,18 +1,16 @@
-import Types from '../actions/types';
+import Types from "../actions/types";
 
-export default function(state = {
-    type: 'Sms',
-    key: 'sms'}, action) {
+const initialState = {type: 'Sms', key: 'sms'};
 
-    console.log('action in sec code reducer: ', action);
+export default function(state = initialState, action) {
 
-  switch (action.type) {
+    switch (action.type) {
 
         case Types.SECURITY_CODE_CHALLENGE_SELECTED :
             return action.payload;
 
-      case Types.SECURITY_CODE_RECEIVED :
-              return {...state, code: action.code };
+        case Types.SECURITY_CODE_RECEIVED :
+            return {...state, code: action.code};
 
         default :
             return state;

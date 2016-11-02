@@ -1,0 +1,212 @@
+
+html {
+    background-color: #272b30;
+    background-image: url("https://bootswatch.com/assets/img/bg.jpg");
+}
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 48px;
+}
+
+.navbar-default {
+    background-color: transparent !important;
+    border-color: #2b2e32 !important;
+    color: lightblue !important;
+}
+
+.bg-font {
+    font-size: 22px !important;
+}
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    padding-top: 80px;
+    left: 0;
+}
+
+.common {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.small-font {
+    font-size: 20px;
+}
+
+.user-info {
+    letter-spacing: 0px;
+    padding: 10px;
+    font-size: 14px;
+    color: lightblue;
+}
+
+.list-group-item.active {
+    background-color: #393d42 !important;
+    color: white !important;
+}
+
+.fa {
+    padding-right: 5px;
+}
+
+.type-info {
+    padding-bottom:30px;
+    height:18px;
+}
+
+.user-info-panel {
+    margin-top: 8px;
+    letter-spacing: 0.2px;
+    width: 70%;
+    float: left;
+}
+
+.user-info-title {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #2196F3 !important;
+}
+
+
+.panel-heading {
+    font-size: 18px;
+}
+
+.user-fetching-circular {
+    margin-top: 250px;
+}
+
+
+.user-info-action {
+    line-height: 600px;
+    color: lightgray;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.security-code-error {
+    width: 100px;
+    margin-top: -25px;
+    text-align: center;
+    border-color: #ffa5a5 !important;
+    bottom: 0;
+    left: 0;
+    z-index:20 !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.security-code-error-txt {
+    margin-top: 8px;
+    border-color: #ffa5a5 !important;
+    height: 45px;
+    overflow: hidden !important;
+}
+
+.generating {
+    margin-top: 290px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.creating-user-link {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+span { display:block; /* Pre-existing code */ }
+
+span.inline {
+    display:inline;
+}
+
+.security-field {
+    float: top; !important;
+    display: inline-block !important;
+    font-size: 18px !important;
+}
+
+.security-code-btn {
+    padding-top: 35px;
+}
+
+.account-number{
+    margin-left: 20px;
+}
+
+.security-list-panel {
+    padding-left: 285px;
+    margin-top: 20px;
+    padding-bottom: 150px;
+    float: left;
+}
+
+.security-code-container {
+    margin-top: 50px;
+}
+
+.security-code-panel {
+    margin-left: 300px;
+    vertical-align: middle;
+    margin-top: 25px;
+}
+
+.sec-code {
+    max-width: 3800px;
+}
+
+.security-list-group {
+    margin-top: 20px;
+}
+
+.security-code-danger{
+    font-size: 38px;
+}
+.security-code-not-found {
+    font-size: 13px;
+    height: 25px;
+    vertical-align: middle !important;
+    margin-top: -15px;
+}
+
+.loading {
+    margin-top: 15px;
+}
+
+.security-code-error-text {
+    font-size: 13px;
+    vertical-align: middle;
+
+    text-align: center;
+
+    width: 100%;
+
+    height: 85px;
+
+    background-color: #2b2e32 !important;
+}
+
+.security-code-retrieved {
+    letter-spacing: 4px;
+    font-size: 30px;
+
+    width: 100%;
+
+    padding-top: 15px;
+    text-align: center;
+    border-radius:5px;
+
+}
+
+.creating-user-link:hover {
+    color: #7f7fff !important;
+}
+
+/*.blue {*/
+    /*background-color: blue;*/
+/*}*/
+
+/*.pink {*/
+    /*background-color: pink;*/
+/*}*/

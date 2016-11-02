@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {selectSecurityCodeChallenge} from '../../actions/index';
-import {bindActionCreators} from 'redux';
-import SecurityCode from './security-code';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {selectSecurityCodeChallenge} from "../../actions/index";
+import {bindActionCreators} from "redux";
+import SecurityCode from "./security-code";
+import {List, ListItem} from "material-ui/List";
+import Styles from "Styles";
 
 
 class SecurityCodeList extends Component {
@@ -11,14 +13,15 @@ class SecurityCodeList extends Component {
         return (
             this.props.securityCodesChallenges.map((securityCodeChallenge, i) => {
                 return (
-                    <a
+                    <ListItem
                         href="#"
                         key={securityCodeChallenge.type}
+                        style={Styles.listItem}
                         onClick={() => this.props.selectSecurityCodeChallenge(securityCodeChallenge)}
-                        className={i === 0 ? "list-group-item list-group-item-action panel-list-color active" :
-                            "list-group-item panel-list-color list-group-item-action"}>
+                        className={i === 0 ? "list-group-item security-list-group-item active" :
+                            "list-group-item security-list-group-item"}>
                         {securityCodeChallenge.type}
-                    </a>
+                    </ListItem>
                 )
             })
         )
@@ -26,10 +29,10 @@ class SecurityCodeList extends Component {
 
     render() {
         return (
-            <div className="container-fluid security-code-panel">
-                <div className="col-md-2">
+            <div className="container-fluid security-code-container">
+                <List className="col-md-2 security-list-group">
                     {this.renderList()}
-                </div>
+                </List>
                 <SecurityCode />
             </div>
         );
@@ -43,7 +46,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ selectSecurityCodeChallenge }, dispatch);
+    return bindActionCreators({selectSecurityCodeChallenge}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecurityCodeList)

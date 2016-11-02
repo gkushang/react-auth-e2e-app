@@ -1,27 +1,50 @@
-import React from 'react';
+import React from "react";
 
 export default function() {
     return (
         <div>
-            <nav className="navbar  navbar-default navbar-fixed-top">
+            <nav className="navbar navbar-default navbar-transparent navbar-fixed-top">
                 <div className="container-fluid">
 
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <div className="navbar-inner">
+
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"> </span>
                             <span className="icon-bar"> </span>
                             <span className="icon-bar"> </span>
                         </button>
 
-                        <a className="navbar-brand" href="#">E2E authnodeweb</a>
+                        <a className="navbar-brand navbar-default"
+                           href="https://github.paypal.com/Identity-R/authnodeweb/tree/develop/tests/acceptance"
+                           target="_blank">
+                            <i className="fa fa-github"> </i>
+                            E2E authnodeweb
+                        </a>
+
                     </div>
 
                     <div id="navbar" className="navbar-collapse collapse">
                         <ul className="nav navbar-nav navbar-right">
-                            <li className="text-info">
-                                <a href="https://github.paypal.com/kugajjar/authuserserv/blob/master/readme.md" target="_blank">
-                                    API Docs
+
+                            <li>
+                                <a href="http://cukes-3821.ccg21.dev.paypalcorp.com/projects/authnodeweb/"
+                                   target="_blank">
+                                    Cucumber Docs
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com:8800/clientAuth" target="_blank">
+                                    PN Simulator
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com" target="_blank">
+                                    API
                                 </a>
                             </li>
 

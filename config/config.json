@@ -3,6 +3,7 @@
     "baseUrl": "http://authserv-8375.ccg21.dev.paypalcorp.com/",
     "endPoints": {
       "popUser": "msmaster/users/pop",
+      "createUser": "msmaster/users/create",
       "retrieveSecurityCode": "stage/securityCode"
     }
   }

@@ -1,19 +1,23 @@
-import React, {Component} from 'react';
-import { reduxForm, Fields, Field} from 'redux-form';
-import Input from '../presentational/Input';
-import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {fetchSecurityCode} from '../../actions/index';
+import React, {Component} from "react";
+import {reduxForm, Fields, Field} from "redux-form";
+import Input from "../presentational/Input";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {fetchSecurityCode} from "../../actions/index";
+import CircularProgress from "material-ui/CircularProgress";
+import Paper from "material-ui/Paper";
+import RaisedButton from "material-ui/RaisedButton";
+import Styles from "Styles";
 
 export const validate = (values) => {
     const errors = {};
 
-    if(!values.stage) {
-        errors.stage =  'Required';
+    if (!values.stage) {
+        errors.stage = 'Required';
     }
 
-    if(!values.accountNumber) {
-        errors.accountNumber =  'Required';
+    if (!values.accountNumber) {
+        errors.accountNumber = 'Required';
     }
 
     return errors;
@@ -23,127 +27,116 @@ class SecurityCode extends Component {
 
     render() {
 
-        const { handleSubmit, submitting, reset, pristine, value, onChange } = this.props;
+        const {handleSubmit} = this.props;
 
-        const renderButton = () => (
-            <div>
-                <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={ pristine || submitting } >
-                    <i className="fa fa-paper-plane" aria-hidden="true"> </i>
-                    Security Code
-                </button>
-            </div>
-            );
+        const renderCode = (retrievedCode, isFetchingCode) => {
 
-        const renderCode = (retrievedCode, isLoading) => {
-
-            if(isLoading) {
+            if (isFetchingCode) {
                 return (
-                    <div className="form-group text-center text-info security-code-error-text pull-right col-sm-2">
-                        <span className="loading">
-                            <i className="fa fa-circle-o-notch fa-spin fa-5x fa-fw" aria-hidden="true"> </i>
-                            <p className="sr-only">Loading...</p>
+                    <span className="loading text-center">
+                            <CircularProgress />
                         </span>
-                    </div>
                 );
             }
 
-            if(retrievedCode.code) {
+
+            if (retrievedCode.code) {
                 return retrievedCode.code.Error ? (
-                    <div className="form-group text-center text-danger security-code-error-text pull-right col-sm-2">
-                            <p className="security-code-danger"><i
-                                className="fa fa-exclamation-triangle security-code-danger"> </i></p>
-                            <p className="security-code-not-found">Not Found</p>
-                    </div>
+                    <span className="text-danger">
+                        <p className="security-code-danger"><i
+                            className="fa fa-exclamation-triangle"> </i></p>
+                        <p className="security-code-not-found">Not Found</p>
+                        </span>
                 ) : (
-                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
+                    <div className="form-group security-code-retrieved pull-right text-primary">
                         <label>{retrievedCode.code.SecurityCode || ''}</label>
                     </div>
                 );
-            } else {
-                return (
-                    <div className="form-group security-code-retrieved pull-right text-primary col-sm-2">
-                    </div>
-                )
             }
         };
-
 
         const renderStageField = () => (
             <Field
                 name="stage"
                 placeholder="CCP"
                 type="text"
-                hintText="claimscollectionserv stage2xx"
+                hintText="claimscollectionserv stage2"
                 component={Input}
-                />
-            );
+            />
+        );
 
         const renderAccountField = () => (
             <Field
                 name="accountNumber"
-                placeholder="Account Number or Email"
+                placeholder="Account # or Email"
                 type="tel"
                 component={Input}
             />
-            );
+        );
+
+        const renderButton = () => (
+            <RaisedButton
+                label={<span> <i className="fa fa-paper-plane"> </i> Security Code </span>}
+                className="raised-button pull-left"
+                labelStyle={{fontSize: 13, color: 'lightgray', fontFamily: "'Montserrat', sans-serif"}}
+                primary={true}
+                type="submit"
+                onTouchTap={this.context.submit}
+            />
+        );
 
         const handleFetch = (params) => {
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
 
-
         return (
+            <div className="security-code-panel row common">
+                <Paper style={Styles.securityCodePanelPaper} zDepth={0} rounded={true}>
 
-            <div>
-                <div className="security-code-fetch panel-color">
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-sm-4">
+                        <div className="form-group col-lg-3 col-md-6 pull-left common blue">
                             {renderStageField()}
                         </div>
 
-                        <div className="form-group col-sm-4">
+                        <div className="form-group col-lg-4 col-md-6 pink">
                             {renderAccountField()}
                         </div>
 
-
-                        <div className="form-group col-sm-1 security-code-btn ">
+                        <div className="form-group col-lg-3 col-md-6 security-code-btn blue">
                             {renderButton()}
                         </div>
 
-                        {renderCode(this.props.securityCodeFetched, this.props.isLoading)}
+                        <div className="form-group col-lg-2 col-md-6 pink pull-right">
+                            <Paper style={Styles.securityCodePaper} zDepth={2} rounded={true}>
+                                {renderCode(this.props.securityCodeFetched, this.props.isFetchingCode)}
+                            </Paper>
+                        </div>
 
                     </form>
-                </div>
-
+                </Paper>
             </div>
-
         );
     }
 }
 
 function mapStateToProps(state) {
-    console.log('stagte in sec code is ', state);
-
     return {
         securityCodeChallenge: state.securityCodeChallenge,
         securityCodeFetched: state.securityCodeFetched,
         user: state.user,
-        isLoading: state.isLoading
+        isFetchingCode: state.isFetchingCode
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchSecurityCode }, dispatch);
+    return bindActionCreators({fetchSecurityCode}, dispatch);
 }
 
 
 SecurityCode = reduxForm({
     form: 'securityCodeForm',
     validate
-}, () => {})(SecurityCode);
+})(SecurityCode);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecurityCode)
