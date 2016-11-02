@@ -107,6 +107,7 @@ body {
 .generating {
     margin-top: 290px;
     font-size: 26px;
+    letter-spacing: 1px;
 }
 
 .creating-user-link {
