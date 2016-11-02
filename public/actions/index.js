@@ -12,7 +12,7 @@ export function selectChallenge(challenge) {
 
         const updateUser = (user) => {
             user.data.challenge = challenge;
-            console.log('User: ', user);
+
             if(user.data.creditcard) {
                 user.data.creditcard.map(function(creditCard) {
                     if(creditCard.cardType === 'Discover') {
@@ -59,28 +59,24 @@ export function selectSecurityCodeChallenge(securityCodeChallenge) {
 }
 
 export function fetchSecurityCode(challenge, params) {
-    console.log('Fetch Security Code:  ', challenge, params);
-
-    const dispatchAction = (code) => {
-
-        console.log('Fetch Security Code ERROR:  ', code);
-
-        code = {
-            Error: code
-        };
-
-        dispatch({
-            type: Types.SECURITY_CODE_RECEIVED,
-            code: code.data ? code.data : code
-        })
-    };
-
     return (dispatch) => {
 
         dispatch({
             type: Types.SECURITY_CODE_REQUEST_TO_FETCH,
             isLoading: true
         });
+
+        const dispatchAction = (code) => {
+
+            code = {
+                Error: code
+            };
+
+            dispatch({
+                type: Types.SECURITY_CODE_RECEIVED,
+                code: code.data ? code.data : code
+            })
+        };
 
         securityCode({challenge, params})
             .then(dispatchAction)
