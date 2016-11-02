@@ -39,9 +39,8 @@ class SecurityCode extends Component {
                 );
             }
 
-
             if (retrievedCode.code) {
-                return retrievedCode.code.Error ? (
+                return retrievedCode.code.Error || !retrievedCode.code.SecurityCode ? (
                     <span className="text-danger">
                         <p className="security-code-danger"><i
                             className="fa fa-exclamation-triangle"> </i></p>

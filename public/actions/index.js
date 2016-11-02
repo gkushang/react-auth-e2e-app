@@ -56,11 +56,19 @@ export const fetchSecurityCode = (challenge, params) => {
             isFetchingCode: true
         });
 
+        const handleNetworkError = (code) => {
+            if (!code) {
+                code = {
+                    Error: code
+                };
+            }
+
+            return code;
+        };
+
         const dispatchAction = (code) => {
 
-            code = {
-                Error: code
-            };
+            code = handleNetworkError(code);
 
             dispatch({
                 type: Types.SECURITY_CODE_RECEIVED,
