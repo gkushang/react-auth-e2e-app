@@ -74,6 +74,7 @@ class UserInformation extends Component {
                                     {info.user.emailAddress}
                                     <a
                                         className="copyButton"
+                                        id="copyIcon"
                                         tooltip="copy"
                                         data-clipboard-action="copy"
                                         data-clipboard-target="#email"
@@ -89,6 +90,7 @@ class UserInformation extends Component {
                                     {info.user.accountNumber}
                                     <a
                                         className="copyButton"
+                                        id="copyIcon"
                                         tooltip="copy"
                                         data-clipboard-action="copy"
                                         data-clipboard-target="#accountNumber"

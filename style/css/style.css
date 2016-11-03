@@ -161,9 +161,14 @@ span.inline {
     font-size: 38px;
 }
 
-.copyButton {
-    margin-left: 10px;
+#copyIcon {
+    margin-left: 5px;
 }
+
+#userAccount {
+    margin-right: 5px;
+}
+
 .security-code-not-found {
     font-size: 13px;
     height: 25px;
