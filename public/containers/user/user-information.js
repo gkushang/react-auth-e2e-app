@@ -68,9 +68,19 @@ class UserInformation extends Component {
                     <div className="col-sm-12 user-info-panel">
                         <div className="row">
 
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-left"><i
-                                    className="fa fa-envelope"> </i> {info.user.emailAddress}</p>
+                            <div className="col-xs-12 col-sm-6" id="email">
+                                <p className="user-info pull-left">
+                                    <i className="fa fa-envelope"> </i>
+                                    {info.user.emailAddress}
+                                    <a
+                                        className="copyButton"
+                                        tooltip="copy"
+                                        data-clipboard-action="copy"
+                                        data-clipboard-target="#email"
+                                    ><i className="fa fa-clipboard"> </i>
+                                    </a>
+                                </p>
+
                             </div>
 
                             <div className="col-xs-12 col-sm-6">

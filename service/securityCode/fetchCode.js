@@ -8,8 +8,8 @@ module.exports = function fetchCode(info) {
 
     const options = {
         params: {
-            challengeType: info.challenge.key,
-            userAccountNumber: info.params.accountNumber
+            challengeType: info.challenge.key.trim(),
+            userAccountNumber: info.params.accountNumber.trim()
         }
     };
 
