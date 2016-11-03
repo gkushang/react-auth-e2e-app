@@ -31,6 +31,21 @@ class SecurityCode extends Component {
 
         const renderCode = (retrievedCode, isFetchingCode) => {
 
+            return (
+                <div className="form-group security-code-retrieved pull-right text-primary" id="showSecurityCode">
+                    <a
+                        className="copyButton"
+                        tooltip="copy"
+                        data-clipboard-action="copy"
+                        data-clipboard-target="#showSecurityCode"
+                    ><label id="showSecurityCode">
+                        444333</label>
+                    </a>
+
+                </div>
+
+            );
+
             if (isFetchingCode) {
                 return (
                     <span className="loading text-center">
