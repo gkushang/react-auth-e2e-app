@@ -9,6 +9,7 @@ export default (field) => {
             errorText={field.meta.touched && field.meta.error}
             style={{width: "70%", float: "left", textAlign: "center"}}
             className="common small-font"
+            inputStyle={{fontSize: "16px"}}
             errorStyle={{fontSize: "10px", float: "left"}}
             hintStyle={{fontSize: "10px"}}
             floatingLabelStyle={{fontSize: "15px"}}
