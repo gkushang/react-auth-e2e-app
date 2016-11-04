@@ -182,7 +182,7 @@ class UserInformation extends Component {
 
                             <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i
-                                    className="fa fa-hourglass-half"> </i> {info.available} left</p>
+                                    className="fa fa-hourglass-half"> </i> {(info.available) ? info.available + " left" : ""} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
