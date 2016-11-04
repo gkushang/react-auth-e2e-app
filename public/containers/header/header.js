@@ -19,7 +19,7 @@ export default function() {
                         <a className="navbar-brand navbar-default"
                            href="https://github.paypal.com/Identity-R/authnodeweb/tree/develop/tests/acceptance"
                            target="_blank">
-                            <i className="fa fa-github"> </i>
+                            <i className="fa fa-github bg-font"> </i>
                             E2E authnodeweb
                         </a>
 

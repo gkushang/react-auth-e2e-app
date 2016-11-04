@@ -165,6 +165,9 @@ span.inline {
     margin-left: 5px;
 }
 
+.bg-font {
+    font-size: 22px !important;
+}
 #userAccount {
     margin-right: 5px;
 }
