@@ -3,35 +3,22 @@ import {connect} from "react-redux";
 import {selectSecurityCodeChallenge} from "../../actions/index";
 import {bindActionCreators} from "redux";
 import SecurityCode from "./security-code";
-import {List, ListItem} from "material-ui/List";
-import Styles from "Styles";
+import {List} from "material-ui/List";
+import ChallengeList from '../presentational/ChallengeList';
 
 
 class SecurityCodeList extends Component {
-
-    renderList() {
-        return (
-            this.props.securityCodesChallenges.map((securityCodeChallenge, i) => {
-                return (
-                    <ListItem
-                        href="#"
-                        key={securityCodeChallenge.type}
-                        style={Styles.listItem}
-                        onClick={() => this.props.selectSecurityCodeChallenge(securityCodeChallenge)}
-                        className={i === 0 ? "list-group-item security-list-group-item active" :
-                            "list-group-item security-list-group-item"}>
-                        {securityCodeChallenge.type}
-                    </ListItem>
-                )
-            })
-        )
-    }
 
     render() {
         return (
             <div className="container-fluid security-code-container">
                 <List className="col-md-2 security-list-group">
-                    {this.renderList()}
+                    <ChallengeList
+                        challenges={this.props.securityCodesChallenges}
+                        className="security-list-group-item"
+                        isDefaultActive={true}
+                        onClick={this.props.selectSecurityCodeChallenge}
+                    />
                 </List>
                 <SecurityCode />
             </div>
