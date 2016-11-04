@@ -60,36 +60,6 @@ class SecurityCode extends Component {
             }
         };
 
-        const renderStageField = () => (
-            <Field
-                name="stage"
-                placeholder="CCP"
-                type="text"
-                hintText="claimscollectionserv stage2"
-                component={Input}
-            />
-        );
-
-        const renderAccountField = () => (
-            <Field
-                name="accountNumber"
-                placeholder="Account # or Email"
-                type="tel"
-                component={Input}
-            />
-        );
-
-        const renderButton = () => (
-            <RaisedButton
-                label={<span> <i className="fa fa-paper-plane"> </i> Security Code </span>}
-                className="raised-button pull-left"
-                labelStyle={{fontSize: 13, color: 'lightgray', fontFamily: "'Montserrat', sans-serif"}}
-                primary={true}
-                type="submit"
-                onTouchTap={this.context.submit}
-            />
-        );
-
         const handleFetch = (params) => {
             this.props.fetchSecurityCode(this.props.securityCodeChallenge, params);
         };
@@ -100,19 +70,37 @@ class SecurityCode extends Component {
 
                     <form className="form-inline" onSubmit={handleSubmit(handleFetch)}>
 
-                        <div className="form-group col-lg-3 col-md-6 pull-left common blue">
-                            {renderStageField()}
+                        <div className="form-group col-lg-3 col-md-6 pull-left common">
+                            <Field
+                                name="stage"
+                                placeholder="CCP"
+                                type="text"
+                                hintText="claimscollectionserv stage2"
+                                component={Input}
+                            />
                         </div>
 
-                        <div className="form-group col-lg-4 col-md-6 pink">
-                            {renderAccountField()}
+                        <div className="form-group col-lg-4 col-md-6">
+                            <Field
+                                name="accountNumber"
+                                placeholder="Account # or Email"
+                                type="tel"
+                                component={Input}
+                            />
                         </div>
 
-                        <div className="form-group col-lg-3 col-md-6 security-code-btn blue">
-                            {renderButton()}
+                        <div className="form-group col-lg-3 col-md-6 security-code-btn">
+                            <RaisedButton
+                                label={<span> <i className="fa fa-paper-plane"> </i> Security Code </span>}
+                                className="raised-button pull-left"
+                                labelStyle={{fontSize: 13, color: 'lightgray', fontFamily: "'Montserrat', sans-serif"}}
+                                primary={true}
+                                type="submit"
+                                onTouchTap={this.context.submit}
+                            />
                         </div>
 
-                        <div className="form-group col-lg-2 col-md-6 pink pull-right">
+                        <div className="form-group col-lg-2 col-md-6 pull-right">
                             <Paper style={Styles.securityCodePaper} zDepth={2} rounded={true}>
                                 {renderCode(this.props.securityCodeFetched, this.props.isFetchingCode)}
                             </Paper>
