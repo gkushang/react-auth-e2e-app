@@ -115,7 +115,7 @@ class UserInformation extends Component {
 
                             <div className="col-xs-12 col-sm-6">
                                 <p className="user-info pull-right"><i
-                                    className="fa fa-user-secret"> </i> {info.user.lastName} </p>
+                                    className="fa fa-user"> </i> {info.user.lastName} </p>
                             </div>
 
                             <div className="col-xs-12 col-sm-6">
