@@ -165,6 +165,13 @@ span.inline {
     margin-left: 5px;
 }
 
+.navbar-nav > li > a {
+    color: #009688 !important;
+}
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+    color: #80CBC4 !important;
+}
+
 .bg-font {
     font-size: 22px !important;
 }
