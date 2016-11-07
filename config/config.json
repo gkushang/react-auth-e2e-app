@@ -1,6 +1,6 @@
 {
   "api": {
-    "baseUrl": "http://authserv-8375.ccg21.dev.paypalcorp.com/",
+    "baseUrl": "http://authserv-8375.ccg21.dev.paypalcorp.com:9999/",
     "endPoints": {
       "popUser": "msmaster/users/pop",
       "createUser": "msmaster/users/create",
