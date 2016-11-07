@@ -22,7 +22,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    port:8888,
+    port: 3000,
     headers: { "Access-Control-Allow-Origin": "*" },
     changeOrigin: true
   },
