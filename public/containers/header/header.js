@@ -43,7 +43,7 @@ export default function() {
 
 
                             <li>
-                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com" target="_blank">
+                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com:9999" target="_blank">
                                     API
                                 </a>
                             </li>
