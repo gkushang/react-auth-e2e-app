@@ -37,7 +37,7 @@ export default function() {
 
                             <li>
                                 <a href="http://authserv-8375.ccg21.dev.paypalcorp.com:8800/clientAuth" target="_blank">
-                                    PN Simulator
+                                    Push Notification
                                 </a>
                             </li>
 
