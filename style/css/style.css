@@ -157,6 +157,10 @@ span.inline {
     margin-top: 20px;
 }
 
+.create-on-fly {
+    padding-left: 10px;
+}
+
 .security-code-danger{
     font-size: 38px;
 }

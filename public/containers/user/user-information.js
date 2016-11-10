@@ -61,8 +61,21 @@ class UserInformation extends Component {
             return (
                 <div>
                     <div className="panel-heading text-primary">
-                        <p className="text-center user-info-title"><i
-                            className="fa fa-paypal"> </i> {info.challenge.type}</p>
+                        <p className="text-center user-info-title">
+                            <i className="fa fa-paypal"> </i>
+                            {info.challenge.type}
+                                <div  data-toggle="tooltip"
+                                      data-placement="left"
+                                      data-delay={{show: 10, hide: 500}}
+                                      className="pull-left tooltip-create-user"
+                                      title={"Create new " + info.challenge.type + " user"}>
+                                    <a
+                                        className="text-info create-on-fly"
+                                        onClick={() => this.props.createUser(info.challenge)} >
+                                        <i className="fa fa-paper-plane"> </i>
+                                    </a>
+                                </div>
+                        </p>
                     </div>
 
                     <div className="col-sm-12 user-info-panel">

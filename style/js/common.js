@@ -48,3 +48,7 @@ $('a').click(function() {
     $(this).addClass("active");
 });
 
+$(function () {
+    $("[data-toggle = 'tooltip']").tooltip();
+    $('.tooltip-create-user').tooltip({title: "Hooray!", delay: {show: 500, hide: 100}});
+});
