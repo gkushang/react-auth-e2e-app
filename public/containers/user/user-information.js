@@ -212,7 +212,7 @@ class UserInformation extends Component {
         return (
             <Paper className="container-fluid common" style={Styles.userInfo} zDepth={1} rounded={true}>
                 { this.props.isFetchingUser ?
-                    <CircularProgress className="user-fetching-circular" size={60} thickness={5}/> : renderInfo(info) }
+                    <CircularProgress className="user-fetching-circular" size={60} thickness={5}> One moment... </CircularProgress> : renderInfo(info) }
             </Paper>
         );
     }

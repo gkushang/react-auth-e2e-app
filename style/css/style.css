@@ -194,6 +194,9 @@ span.inline {
     margin-top: 15px;
 }
 
+.tooltip-create-user {
+    font-size: 15px !important;
+}
 .security-code-error-text {
     font-size: 13px;
     vertical-align: middle;
