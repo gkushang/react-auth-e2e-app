@@ -50,6 +50,40 @@ class UserInformation extends Component {
             }
         }
 
+        const  renderEmailAlias = (info) => {
+
+            if (info.user.emailAlias) {
+
+                return (
+                    <div>
+                        <div className="col-xs-12 col-sm-6">
+                            <p className="user-info  pull-left"><i
+                                className="fa fa-mobile"> </i> {info.user.homePhoneNumber}, {info.user.mobilePhone} </p>
+                        </div>
+
+                        <div className="col-xs-12 col-sm-6">
+                            <p className="user-info pull-right"><i
+                                className="fa fa-envelope-o"> </i> {info.user.emailAlias} </p>
+                        </div>
+                    </div>
+                )
+            } else {
+                return (
+                    <div>
+                        <div className="col-xs-12 col-sm-6">
+                            <p className="user-info  pull-left"><i
+                                className="fa fa-mobile"> </i>{info.user.mobilePhone} </p>
+                        </div>
+
+                        <div className="col-xs-12 col-sm-6">
+                            <p className="user-info pull-right"><i
+                                className="fa fa-phone"> </i> {info.user.homePhoneNumber} </p>
+                        </div>
+                    </div>
+                )
+            }
+        };
+
         const renderInfo = (info) => {
 
             var challenges = info.challenge.key;
@@ -57,6 +91,7 @@ class UserInformation extends Component {
             if (info.challenges) {
                 challenges = info.challenges.join(', ');
             }
+
 
             return (
                 <div>
@@ -141,15 +176,7 @@ class UserInformation extends Component {
                                     className="fa fa-map-marker"> </i> {info.user.homeCity} </p>
                             </div>
 
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info  pull-left"><i
-                                    className="fa fa-mobile"> </i> {info.user.mobilePhone} </p>
-                            </div>
-
-                            <div className="col-xs-12 col-sm-6">
-                                <p className="user-info pull-right"><i
-                                    className="fa fa-phone"> </i> {info.user.homePhoneNumber} </p>
-                            </div>
+                            {renderEmailAlias(info)}
 
                             <div className="col-xs-12 col-sm-6">
                                 <p className="user-info  pull-left"><i
