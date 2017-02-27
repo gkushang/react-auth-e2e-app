@@ -17,7 +17,7 @@ export default function() {
                         </button>
 
                         <a className="navbar-brand navbar-default"
-                           href="https://github.paypal.com/Identity-R/authnodeweb/tree/develop/tests/acceptance"
+                           href="https://provide_valid_url"
                            target="_blank">
                             <i className="fa fa-github bg-font"> </i>
                             E2E authnodeweb
@@ -29,21 +29,21 @@ export default function() {
                         <ul className="nav navbar-nav navbar-right">
 
                             <li>
-                                <a href="http://cukes-3821.ccg21.dev.paypalcorp.com/projects/authnodeweb/"
+                                <a href="http://provide_valid_url
                                    target="_blank">
                                     Cucumber Docs
                                 </a>
                             </li>
 
                             <li>
-                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com:8800/clientAuth" target="_blank">
+                                <a href="http://provide_valid_url" target="_blank">
                                     Push Notification
                                 </a>
                             </li>
 
 
                             <li>
-                                <a href="http://authserv-8375.ccg21.dev.paypalcorp.com:9999" target="_blank">
+                                <a href="http://provide_valid_url" target="_blank">
                                     API
                                 </a>
                             </li>
